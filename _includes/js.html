@@ -10,12 +10,26 @@
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB39zcSF_ElobeJ8fhVZAaCbuAOXs7nqC4" width="640" height="480"></script> -->
 
-<script type="text/javascript"
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src=""https://www.google.com/maps/embed/v1/place?key=AIzaSyB39zcSF_ElobeJ8fhVZAaCbuAOXs7nqC4
-    &sensor=false></script>
+    <script>
+      function initMap() {
+        var uluru = {lat: -23.67553, lng: -46.19424};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB39zcSF_ElobeJ8fhVZAaCbuAOXs7nqC4">
+    </script>
+
+
+
+
 
 
 <!--"https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false" -->
