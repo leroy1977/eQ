@@ -47,7 +47,7 @@ function init() {
         zoom: 14,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(-23.6753, -46.1940), // Taiaçupeba, Mogi das Cruzes-SP
+        center: new google.maps.LatLng(-23.6754, -46.1941), // Taiaçupeba, Mogi das Cruzes-SP   -23.675401, -46.194162
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -70,7 +70,7 @@ function init() {
             "stylers": [{
                 "color": "#000000"
             }, {
-                "lightness": 30
+                "lightness": 25
             }]
         }, {
             "featureType": "road.highway",
@@ -175,7 +175,7 @@ function init() {
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(-23.6753, -46.1940);
+    var myLatLng = new google.maps.LatLng(-23.6754, -46.1941);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
