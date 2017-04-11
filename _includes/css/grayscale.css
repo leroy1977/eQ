@@ -64,7 +64,7 @@ a:focus {
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: {{ site.color.primary-dark }};
 }
@@ -286,7 +286,7 @@ a:focus {
 }
 
 .btn {
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     -webkit-transition: all .3s ease-in-out;
