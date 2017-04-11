@@ -10,7 +10,7 @@ body {
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
     background-color: {{ site.color.primary-dark }};
-    background: url(/img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(/img/intro-bg.jpg);
 }
 
 html {
