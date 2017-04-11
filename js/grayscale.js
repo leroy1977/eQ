@@ -70,7 +70,7 @@ function init() {
             "stylers": [{
                 "color": "#000000"
             }, {
-                "lightness": 20
+                "lightness": 40
             }]
         }, {
             "featureType": "road.highway",
