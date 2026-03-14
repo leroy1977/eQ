@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR">
+
+<head>
+	
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTL6WB0X99"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MTL6WB0X99');
+</script>
+
+	
+    <!-- Document Meta
+    ============================================= -->
+    <meta charset="utf-8">
+	<meta http-equiv="content-language" content="pt-br">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--IE Compatibility Meta-->
+	<meta name="robots" content="index,follow">
+    <meta name="author" content="eQuanta - Consultoria, Projetos e Estudos Ambientais">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="eQuanta - Consultoria, Projetos e Estudos Ambientais para Licenciamento Ambiental, Conservação da Biodiversidade e Qualidade de Vida Humana.">
+	<meta name="keywords" content="consultoria,consultoria ambiental,projeto ambiental,estudo ambiental,engenharia ambiental,viabilidade ambiental,estudo de viabilidade,licenciamento ambiental,licença prévia LP,licença de instalação LI,licença de operação LO,licença ambiental rural,levantamento de fauna para licenciamento ambiental,serviços ambientais de consultoria,licenciamento de portos,licenciamento de marinas,licenciamento de condomínios,licença ambiental para loteamento,alvará em área de proteção de mananciais,atividades licenciáveis em APRM,parcelamento do solo,desmembramento,desdobro,via rápida ambiental cetesb, cadri,vra,silis,mce,licenciamento simplificado,licenciamento ambiental simplificado,mapa ambiental,avaliação ambiental, monitoramento ambiental, análise de risco ambiental,plano de atendimento emergencial,pae,gerenciamento de resíduos,pgrs,projeto planialtimétrico,mapa,cartografia,projeto topográfico,planialtimetria,topografia,estudo de impacto ambiental (EIA),relatório de impacto ambiental (RIMA),gestão ambiental,empresas de consultoria em são paulo,consultoria ambiental em são paulo,consultoria em são paulo,consultoria ambiental em sp,empresas de consultoria sp,empresas de consultoria ambiental em são paulo,empresas de consultoria ambiental em sp,consultoria ambiental em ubatuba,consultoria ambiental no rio de janeiro,consultoria ambiental em mogi das cruzes,licenciamento ambiental em mogi das cruzes,consultoria ambiental no litoral norte,monitoramento ambiental marinho,monitoramento de bioinvasores,comunidades bentônicas incrustantes,avaliação rápida da biodiversidade,arb,ecologia,sustentabilidade,esg,bacias hidrograficas,recursos hídricos,gestão,integrada,geoprocessamento,sig,geotecnologias,sensoriamento remoto,geotecnia,ensaios,toxicologia,pagamento por serviços ambientais,psa,laudo de vegetação,supressão de vegetação,manejo arbóreo,plano de manejo,relatório ambiental preliminar,rap,avaliação ecológica rápida,aer,plano básico ambiental,pba,plano de utilização pretendida,pup,licenca cetesb,CAR,cadastro ambiental rural,regularização de imóveis,regularização de imóvel rural,multa ambiental,análise de água,análise ambiental, descaracterização,app,área de preservação permanente,reserva legal,crédito de carbono,carbono,compensação ambiental,mina aquática,bioprospecção marinha,modelagem,índice de sensibilidade, sensibilidade ao óleo,riscos ambientais,tcra ambiental,tcra,desenho metodológico,guia ecológico,plano interpretativo,eco-pedagógico,ambientes artificiais">
+
+    <link href="assets/images/favicon/favicon.png" rel="icon">
+
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "Environmental",
+  "name": "eQuanta",
+  "url": "www.equanta.com.br",
+  "description": "Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana.",
+  "address": {
+    "@type": "PostalAddress",
+     "streetAddress": "R. Ponte Serrada",
+    "addressLocality": "São Paulo",
+    "addressRegion": "São Paulo",
+    "postalCode": "08290-595",
+    "addressCountry": "Brazil"
+  },
+  "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:00",
+  "contactPoint": {
+    "@type": "ContactPoint",
+  }
+}
+</script>
+
+
+    <!-- Fonts
+    ============================================= -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="assets/css/external.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Document Title
+    ============================================= -->
+    <title>eQuanta - Sobre Nós - Consultoria Ambiental</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<style>
+  #projectMap {
+    width: 80%;
+    max-width: 800px;
+    height: 520px;
+    margin: 2rem auto;       /* centers horizontally and adds vertical spacing */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: block;           /* ensures margin auto works */
+  }
+
+  .filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .filter-button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .filter-button.active {
+    background-color: #004d40;
+    color: white;
+  }
+
+  .info.legend {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 1.4;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  }
+
+  .info.legend h4 {
+    margin: 0 0 4px;
+    font-size: 14px;
+  }
+</style>
+
+
+
+	
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="signal"></div>
+    </div>
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapperParallax" class="wrapper clearfix">
+<header id="navbar-spy" class="header header-1 header-transparent">
+	<nav id="primary-menu" class="navbar navbar-expand-lg navbar-light navbar-bordered fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img class="logo logo-light" src="assets/images/logo/logo_BR_oficial_2025_path.svg" alt="eQuanta Logo">
+				<img class="logo logo-dark" src="assets/images/logo/logo_PT_oficial_2025_path.svg" alt="eQuanta Logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+							
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav ml-auto">
+	
+<!-- Index -->
+	<li> 
+		<a href="index.html" class="dropdown-toggle menu-item">Home</a>
+	</li>	
+<!-- Sobre -->
+	<li> 
+		<a href="sobre-equanta.html" class="dropdown-toggle menu-item">Sobre Nós</a>
+	</li>
+<!-- li end -->
+
+<!-- servicos -->
+	<li> 
+		<a href="servicos-ambientais.html" class="dropdown-toggle menu-item">Serviços</a>
+	</li>
+<!-- li end -->
+
+<!-- contato -->
+	<li> 
+		<a href="contato-equanta.html" class="dropdown-toggle menu-item">Contato</a>
+	</li>
+<!-- li end -->
+	
+	
+				
+</header>
+
+<!-- Page Title #1
+============================================= -->
+<section id="page-title" class="page-title bg-overlay bg-overlay-dark bg-parallax">
+    <div class="bg-section">
+        <img src="assets/images/page-titles/ants_eussocial.jpg" alt="Sobre a Equanta - Consultoria Ambiental" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
+                <div class="title text-center">
+                    <div class="title--heading">
+                        <h1>Sobre Nós</h1>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ol class="breadcrumb d-flex justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Sobre Nos</li>
+                    </ol>
+                </div><!-- .title end -->
+            </div><!-- .col-lg-8 end -->
+        </div><!-- .row end -->
+    </div><!-- .container end -->
+</section><!-- #page-title end -->
+
+
+<!-- services #1
+============================================= -->
+<section id="services1" class="services services-1 pt-130 pb-70">
+    <div class="container">
+        <div class="row heading heading-1 mb-50">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="heading--subtitle">Negócios pautados em sistemas regenerativos e na sustentabilidade</p>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <h4 >Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana</h4>
+            </div>
+            <!-- .col-lg-6 end -->
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <p class="heading--desc">Somos a eQuanta, uma consultoria ambiental que oferece soluções integradas e eficazes para empresas e instituições comprometidas com a sustentabilidade, aliando rigor técnico e custo-efetividade em relações de cooperação, transparência e sinergia. Formamos um corpo técnico multidisciplinar, organizado segundo as necessidades e características de cada projeto. Atendemos organizações, órgãos públicos e empresas privadas que buscam valorizar e tornar suas atividades mais resilientes por meio de práticas sustentáveis e de uma gestão ambiental inovadora.</p>
+			<br><br>
+            </div>
+
+            <!-- .col-lg-6 end -->
+        </div>
+        <!-- .row end -->
+			
+	
+	       <div class="row">
+            <!-- feature panel #1 -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                 <div class="service-panel">
+                    <div class="service--img">
+                    <img src="assets/images/services/etica.svg" alt="feature" class="img-fluid">
+                    </div><!-- .service-img end -->
+                    <div class="service--content">
+                        <h4>Ética</h4>
+                        <p>Compromisso com a sustentabilidade, pautado na pesquisa e aplicação de conhecimento em conjunto com metodologias consolidadas, para compatibilizar o seu projeto à conservação da natureza.</p>
+                    </div><!-- .service-content end -->
+                </div>
+            </div><!-- .col-lg-4 end -->
+            <!-- feature panel #2 -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="service-panel">
+                    <div class="service--img">
+                        <img src="assets/images/services/dialogo.svg" alt="feature" class="img-fluid">
+                    </div><!-- .service-img end -->
+                    <div class="service--content">
+						<h4>Diálogo</h4>
+                        <p>Desde o primeiro contato, você negocia diretamente com quem planeja o seu projeto ambiental, com base em um diálogo franco e objetivo.</p>
+						</div>
+						</div>
+            </div><!-- .col-lg-4 end -->
+            <!-- feature panel #3 -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="service-panel">
+                    <div class="service--img">
+                        <img src="assets/images/services/ganho.svg" alt="feature" class="img-fluid">
+                    </div><!-- .service-img end -->
+                    <div class="service--content">
+						<h4>Valor</h4>
+                        <p>Com ênfase nas necessidades específicas de cada projeto, nós desenhamos a melhor solução possível: enxuta e objetiva, visando gerar valor através da conservação da biodiversidade.</p>
+                    </div><!-- .service-content end -->
+                </div>
+            </div><!-- .col-lg-4 end -->
+        </div><!-- .row end -->
+		
+		<div class="row">
+            <!-- feature panel #1 -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="service-panel">
+                    <div class="service--img">
+                        <img src="assets/images/services/interesses.svg" alt="feature" class="img-fluid">
+                    </div><!-- .service-img end -->
+                    <div class="service--content">
+											 <h4>Interesses Latentes</h4>
+  				 <p>Aprimoramos continuamente nossa atuação em:
+					<br>
+					- Otimização do manejo florestal voltado a projetos de recuperação ecológica
+					<br>
+					- Aplicação de técnicas e métricas ecológicas em processos, com foco em eficiência energética
+					<br>
+					- Desenvolvimento de sistemas de análise sob uma abordagem socioecológica, reduzindo impactos sobre os aspectos funcionais e cênicos da natureza
+					<br>
+					- Avanço no uso de novas ferramentas de análise e modelagem de dados ambientais</p>	
+                    </div><!-- .service-content end -->
+                </div>
+            </div><!-- .col-lg-4 end -->
+            <!-- feature panel #2 -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="service-panel">
+                    <div class="service--img">
+                        <img src="assets/images/services/sustentabilidade.svg" alt="feature" class="img-fluid">
+                    </div><!-- .service-img end -->
+                    <div class="service--content">
+                        <h4>Ecologia & Responsabilidade</h4>
+                        <p>Na eQuanta, mediamos a intervenção humana em ecossistemas naturais com base no tripé ecologia - responsabilidade distribuída - negócios, e produzimos elementos para a tomada de decisão em projetos que interferem na dinâmica dos ecossistemas naturais terrestres e aquáticos. Nosso propósito é produzir conhecimento técnico e científico que subsidie a tomada de decisão em projetos que interagem com esses ecossistemas, promovendo o desenvolvimento em equilíbrio com a natureza.</p>
+						
+                    </div><!-- .service-content end -->
+                </div>
+            </div><!-- .col-lg-4 end -->
+            <!-- feature panel #3 -->		
+			
+			    <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="service-panel">
+                    <div class="service--img">
+                        <img src="assets/images/services/ecology-industry.svg" alt="feature" class="img-fluid">
+                    </div><!-- .service-img end -->
+                    <div class="service--content">
+                        <h4>Nossa Atuação</h4>
+                        <br>
+						<p> - Em ecossistemas terrestres, atuamos junto a empreendimentos imobiliários, indústrias e produtores rurais.
+						<br>
+							- Em ecossistemas aquáticos, atendemos o setor de óleo e gás, portos, marinas, governos e organizações do Terceiro Setor voltadas ao desenvolvimento sustentável.</p> 
+                    </div><!-- .service-content end -->
+                </div>
+            </div><!-- .col-lg-4 end -->
+            <!-- feature panel #3 -->
+			
+            </div><!-- .col-lg-4 end -->
+        
+
+
+<br><br>
+			
+	<h4 >Alguns de nossos clientes e parceiros</h4>
+	<!-- Clients #1============================================= -->
+<section id="clients1" class="clients clients-carousel clients-1">
+    <div class="container">
+        <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            	<div class="carousel owl-carousel" data-slide="6" data-slide-rs="2" data-autoplay="true" data-nav="false" data-dots="false" data-space="0" data-loop="true" data-speed="3000">
+				<!-- Client #1 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-brasao_eg-pb.png" alt="Prefeitura Municipal Embu-Guaçu">
+                </div>
+                <!-- .client end -->
+				<!-- Client #2 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-aqtca.png" alt="Aquática Consultoria">
+                </div>
+                <!-- .client end -->
+				<!-- Client #3 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-porto.png" alt="Porto de São Sebastião">
+                </div>
+                <!-- .client end -->
+                <!-- Client #4 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-dta.png" alt="DTA Engenharia">
+                </div>
+                <!-- .client end -->
+				<!-- Client #5 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-siaa.png" alt="SIAA BR Ambiental">
+                </div>
+                <!-- .client end -->
+                <!-- Client #6 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-finatec.png" alt="FINATEC">
+                </div>
+                <!-- .client end -->
+                <!-- Client #7 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-fundespa.png" alt="FUNDESPA">
+                </div>
+                <!-- .client end -->
+				<!-- Client #8 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-l&mt-pb.png"  alt="LORCA&MONTECLARO">
+                </div>
+                <!-- .client end -->
+				<!-- Client #9 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-aruma.png" alt="ARUMÃ AMBIENTAL">
+                </div>
+                <!-- .client end -->
+				<!-- Client #10 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente_MFAmbiental_PB.png" alt="MATTEI&FRANCO">
+                </div>
+                <!-- .client end -->
+				<!-- Client #11 -->
+                <div class="client">
+                <img src="assets/images/clientes/cliente-soter.png" alt="SOTHER ENGENHARIA">
+                </div>
+                <!-- .client end -->
+                </div>
+            </div>
+        </div>
+        <!-- .row-clients end -->
+    </div>
+    <!-- .container end -->
+</section>
+<br><br>
+	<h4>Os Objetivos de Desenvolvimento Sustentável que seguimos</h4>
+	<!-- ODS #1============================================= -->
+<section id="clients1" class="clients clients-carousel clients-1">
+    <div class="container">
+        <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div class="carousel owl-carousel" data-slide="5" data-slide-rs="2" data-autoplay="false" data-nav="false" data-dots="false" data-space="12" data-loop="true" data-speed="3000">
+                <!-- ODS #11 -->
+                <div class="client">
+                <a href="https://brasil.un.org/pt-br/sdgs/11" target="_blank"><img src="assets/images/ods/SDG-11.svg" alt="ODS11"></a>
+                </div>
+                <!-- .client end -->
+				<!-- ODS #13 -->
+                <div class="client">
+                <a href="https://brasil.un.org/pt-br/sdgs/13" target="_blank"><img src="assets/images/ods/SDG-13.svg" alt="ODS13"></a>
+                </div>
+                <!-- .client end -->
+                <!-- ODS #14 -->
+                <div class="client">
+                <a href="https://brasil.un.org/pt-br/sdgs/14" target="_blank"><img src="assets/images/ods/SDG-14.svg" alt="ODS14"></a>
+                </div>
+                <!-- .client end -->
+				<!-- ODS #15 -->
+                <div class="client">
+                <a href="https://brasil.un.org/pt-br/sdgs/15" target="_blank"><img src="assets/images/ods/SDG-15.svg" alt="ODS15"></a>
+                </div>
+                <!-- .client end -->
+                <!-- ODS #17 -->
+                <div class="client">
+                <a href="https://brasil.un.org/pt-br/sdgs/17" target="_blank"><img src="assets/images/ods/SDG-17.svg" alt="ODS17"></a>
+                </div>
+                <!-- .client end -->
+                </div>
+            </div>
+        </div>
+        <!-- .row-clients end -->
+    </div>
+    <!-- .container end -->
+<br><br><br><br>
+
+  <div class="work--title">
+	<h4>Projetos Realizados</h4>
+	<br>
+    </div>
+
+<p>Visualize nossos projetos concluídos recentemente, categorizados em ambientes terrestres e aquáticos.</p>			    
+</section>		
+    </div><!-- .container end -->
+
+<!-- Leaflet HTML -->
+<section id="map-section">
+  <!-- <h3>Projetos Realizados</h3> 
+  <p>Visualize nossos projetos concluídos em todo o Brasil, categorizados em ambientes terrestres e aquáticos.</p> -->
+	
+  <div class="filter-bar">
+    <button class="filter-button active" data-type="all">Todos</button>
+    <button class="filter-button" data-type="terrestrial">Terrestres 🌿</button>
+    <button class="filter-button" data-type="aquatic">Aquáticos 🌊</button>
+  </div>
+
+  <div id="projectMap"></div>
+</section>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Initialize the map
+  var map = L.map('projectMap').setView([-14.2350, -51.9253], 4); // Brazil center
+
+  // Add the tile layer
+ // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //  attribution: '© OpenStreetMap contributors'
+ // }).addTo(map);
+  
+  
+    // Modern light-gray base map (CartoDB Positron)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap contributors',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Define custom icons
+  var terrestrialIcon = L.icon({
+    iconUrl: 'https://cdn.jsdelivr.net/gh/pointhi/leaflet-color-markers@master/img/marker-icon-green.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  var aquaticIcon = L.icon({
+    iconUrl: 'https://cdn.jsdelivr.net/gh/pointhi/leaflet-color-markers@master/img/marker-icon-blue.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+// Project data
+  var projects = [
+    {
+      name: "Análise de Vegetação – Guarujá, State of São Paulo",
+      coords: [-23.914036, -46.174051],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em fragmentos urbanos."
+    },
+    {
+      name: "Análise de Viabilidade de Licenciamento Ambiental – Mogi das Cruzes, State of São Paulo",
+      coords: [-23.654646, -46.160328],
+      type: "terrestrial",
+      description: "Diagnóstico da vegetação e estudo de viabilidade para licenciamento em APRM."
+    },
+    {
+      name: "Estudo de Caracterização da Vegetação e Levantamento da Fauna – Jd. Angela, State of São Paulo",
+      coords: [-23.752432, -46.747397],
+      type: "terrestrial",
+      description: "Caracterização da vegetação e levantamento de avifauna e pequenos mamíferos para o Projeto Caoby - SOS Guarapiranga."
+    },      
+    {
+      name: "Análise de Vegetação – Mogi das Cruzes, State of São Paulo",
+      coords: [-23.701942, -46.136218],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e regularização ambiental em fragmentos rurais em APRM."
+    },        
+    {
+      name: "Análise de Vegetação – Pirituba, State of São Paulo",
+      coords: [-23.473148, -46.711263],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em fragmentos urbanos."
+    },    
+    {
+      name: "Análise de Vegetação – Parelheiros, State of São Paulo",
+      coords: [-23.823448, -46.737433],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em fragmentos urbanos."
+    },    
+    {
+      name: "Análise de Vegetação – Caieiras, State of São Paulo",
+      coords: [-23.401724, -46.661438],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em fragmentos urbanos."
+    },    
+    {
+      name: "Monitoramento Aquático – Guarujá, State of São Paulo",
+      coords: [-24.008864, -46.216434],
+      type: "aquatic",
+      description: "Biomonitoramento em ecossistemas costeiros."
+    },
+    {
+      name: "Monitoramento Aquático – Guarujá, State of São Paulo",
+      coords: [-24.052445, -46.265380],
+      type: "aquatic",
+      description: "Biomonitoramento em ecossistemas costeiros."
+    },
+    {
+      name: "Estudo Marinho – Guarujá, State of São Paulo",
+      coords: [-24.033661, -46.301129],
+      type: "aquatic",
+      description: "Levantamento de comunidades bentônicas e caracterização ambiental marinha."
+    },
+    {
+      name: "Estudo Marinho – Guarujá, State of São Paulo",
+      coords: [-24.008658, -46.326439],
+      type: "aquatic",
+      description: "Levantamento de comunidades bentônicas e caracterização ambiental marinha."
+    },
+    {
+      name: "Monitoramento Aquático – Guarujá, State of São Paulo",
+      coords: [-24.023077, -46.328079],
+      type: "aquatic",
+      description: "Estudo socioecológicos de estoques pesqueiros artesanais."
+    },
+    {
+      name: "Monitoramento Aquático – Bertioga, State of São Paulo",
+      coords: [-23.827267, -46.024690],
+      type: "aquatic",
+      description: "Biomonitoramento em ecossistemas costeiros."
+    },    
+    {
+      name: "Estudo Marinho – Peruíbe, State of São Paulo",
+      coords: [-24.382594, -46.982114],
+      type: "aquatic",
+      description: "Análise de dados para o Plano de Manejo da APAMLS."
+    },
+    {
+      name: "Estudo Marinho – Ubatuba, State of São Paulo",
+      coords: [-23.424090, -44.851087],
+      type: "aquatic",
+      description: "Análise de dados para o Plano de Manejo da APAMLN."
+    },    
+    {
+      name: "Análise de Vegetação – Peruíbe, State of São Paulo",
+      coords: [-24.365303, -47.022869],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em fragmentos urbanos."
+    },    
+    {
+      name: "Análise de Vegetação – São Sebastião, State of São Paulo",
+      coords: [-23.757708, -45.758219],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em APP."
+    },   
+    {
+      name: "Estudo Marinho – Ilhabela, State of São Paulo",
+      coords: [-23.732078, -45.342602],
+      type: "aquatic",
+      description: "Levantamento de comunidades bentônicas e caracterização ambiental marinha."
+    },     
+    {
+      name: "Análise de Vegetação – Ilhabela, State of São Paulo",
+      coords: [-23.814877, -45.352396],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação e compensação ambiental em APP."
+    },    
+    {
+      name: "Monitoramento Aquático – São Sebastião, State of São Paulo",
+      coords: [-23.816096, -45.402165],
+      type: "aquatic",
+      description: "Biomonitoramento em ecossistemas costeiros."
+    },    
+    {
+      name: "Análise de Vegetação – Ubatuba, State of São Paulo",
+      coords: [-23.555755, -45.227367],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação em fragmentos urbanos."
+    },    
+    {
+      name: "Regularização Ambiental – Ubatuba, State of São Paulo",
+      coords: [-23.304803, -44.872206],
+      type: "terrestrial",
+      description: "Análise Técnico-Jurídica e Regularização Ambiental em área rural."
+    },
+    {
+      name: "Monitoramento da Vegetação – Manicoré, State of Amazonas",
+      coords: [-5.692768, -61.164250],
+      type: "terrestrial",
+      description: "Monitoramento da regeneração e degradação da vegetação fauna no bioma amazônico."
+    },
+    {
+      name: "Monitoramento da Vegetação – Humaitá, State of Amazonas",
+      coords: [-7.198048, -62.980334],
+      type: "terrestrial",
+      description: "Monitoramento da regeneração e degradação da vegetação fauna no bioma amazônico."
+    },    
+    {
+      name: "Monitoramento da Vegetação – Itacoatiara, State of Amazonas",
+      coords: [-3.226112, -58.659709],
+      type: "terrestrial",
+      description: "Monitoramento da regeneração e degradação da vegetação fauna no bioma amazônico."
+    },    
+    {
+      name: "Análise de dados oceanográficos – Rio de Janeiro, State of Rio de Janeiro",
+      coords: [-21.976625, -39.203384],
+      type: "aquatic",
+      description: "Análise de dados oceanográficos na bacia de Santos."
+    },
+    {
+      name: "Licenciamento Ambiental em APRM – Mogi das Cruzes - State of São Paulo",
+      coords: [-23.671092, -46.178747],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação em fragmentos urbanos."
+    },
+    {
+      name: "Licenciamento Ambiental em APRM – Mogi das Cruzes - State of São Paulo",
+      coords: [-23.692962, -46.207967],
+      type: "terrestrial",
+      description: "Estudo de caracterização da vegetação em fragmentos rurais."
+    } 
+  ];
+
+  // Add markers dynamically
+  var markers = [];
+
+  function addMarkers(filterType) {
+    // Remove existing markers
+    markers.forEach(m => map.removeLayer(m));
+    markers = [];
+
+    // Add markers based on filter
+    projects.forEach(p => {
+      if (filterType === "all" || p.type === filterType) {
+        var icon = p.type === "terrestrial" ? terrestrialIcon : aquaticIcon;
+        var marker = L.marker(p.coords, { icon: icon })
+          .bindPopup("<b>" + p.name + "</b><br>" + p.description + "<br><i>Categoria: " + (p.type === "terrestrial" ? "Terrestre" : "Aquático") + "</i>")
+          .addTo(map);
+        markers.push(marker);
+      }
+    });
+  }
+
+  // Initial load
+  addMarkers("all");
+
+  // Filter button functionality
+  document.querySelectorAll('.filter-button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.filter-button').forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      addMarkers(button.dataset.type);
+    });
+  });
+
+  // Add legend
+  var legend = L.control({ position: "bottomright" });
+  legend.onAdd = function(map) {
+  var div = L.DomUtil.create('div', 'info legend');
+  var categories = ["Terrestre", "Aquático"];
+  var colors = ["#28a745", "#007bff"];  // <-- Match these colors with your pins
+  for (var i = 0; i < categories.length; i++) {
+    div.innerHTML += 
+      '<i style="background:' + colors[i] + '; width:12px; height:12px; display:inline-block; margin-right:6px;"></i> ' +
+      categories[i] + '<br>';
+  }
+  return div;
+};
+  legend.addTo(map);
+</script>
+
+
+</section><!-- #services1 end -->
+
+
+<!-- Footer #1
+============================================= -->
+<footer id="footerParallax" class="footer footer-1">
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget-about">
+                    <div class="widget--content">
+                        <img class="footer-logo" src="assets/images/logo/logo_slogan_BR_oficial_2025_path.svg" alt="logo equanta licenciamento ambiental, PSA, CAR, INCRA, CETESP">
+                        <p>Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana</p>
+                        <div class="social--icons">
+				<a target="_blank" href="https://pt-br.facebook.com/eQuanta.env/" class="facebook"><i class="fa fa-facebook"></i></a>
+				<a target="_blank" href="https://www.instagram.com/eq.uanta/" class="instagram"><i class="fa fa-instagram"></i></a>
+				<a target="_blank" href="https://www.linkedin.com/company/equanta-estudos-ambientais" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div><!-- .col-lg-3 end -->
+                <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--links">
+                    <div class="footer--widget-title">
+                        <h5>Mapa do Site</h5>
+                    </div>
+                    <div class="widget--content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="sobre-equanta.html">Sobre Nós</a></li>
+                            <li><a href="servicos-ambientais.html">Serviços</a></li>
+                            <li><a href="contato-equanta.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div><!-- .col-lg-3 end -->
+                <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--contact-info">
+                    <div class="footer--widget-title">
+                        <h5>Empresa </h5>
+                    </div>
+                    <div class="widget--content">
+                        <p><img class="footer-logo" src="assets/images/logo/logo_dnausp.png" width="50%" height="auto" style="margin: 4px 6px 0px 0px;" alt="  - eQuanta - Serviços Ambientais">
+		 	<img class="footer-logo" src="assets/images/logo/logo_eQ_br_2025_path.svg" width="90" height="auto" style="margin: 4px 4px 0px 8px;" alt="  - eQuanta - Serviços Ambientais"></p>  
+		    </div>
+                </div><!-- .col-lg-3 end -->
+
+                <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--newsletter">
+
+                    <div class="widget--content">
+                       <p><b>Somos uma Empresa Digital</b>
+						<br>	
+						🌿 Sede: São Paulo - SP
+						<br>	
+						💻 Atendimento: Segunda a Sexta-feira, 09:00 - 18:00
+						</p>
+                    </div>
+                </div><!-- .col-lg-3 end -->	
+                <div class="clearfix"></div>
+            </div>
+        </div><!-- .container end -->
+    </div><!-- .footer-widget end -->
+    <div class="footer--bar">
+        <div class="row">
+            <div class="col-md-12 col-md-12 text--center footer--copyright">
+                <div class="copyright">
+					<span>© eQuanta - Diligentia laborat in omnis silvae et maria - </span> <a href="#">eQuanta.com.br</a>
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+    </div><!-- .footer-bar end -->
+</footer>
+
+
+<!--BOTÃO DO CRISP -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="610cd497-9174-4894-a153-6a62efc1ec96";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+		
+<script src="https://kit.fontawesome.com/a7a0d0c36c.js" crossorigin="anonymous"></script>
+
+<!-- Add before closing </body> tag: calling language switcher script -->
+<script src="assets/js/language-switcher.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/functions.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
