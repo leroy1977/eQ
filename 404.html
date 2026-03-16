@@ -186,9 +186,34 @@ VOLTAR À PÁGINA INICIAL / RETURN TO HOMEPAGE
 </section><!-- #work end -->
 
 <script>
+
+var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+
+/* Normalize the path by collapsing multiple slashes */
+var cleanPath = window.location.pathname.replace(/\/{2,}/g, "/");
+
+/* If the cleaned path is only "/" redirect to homepage */
+if (cleanPath === "/") {
+
+  if (lang.startsWith("pt")) {
+    window.location.href = "/index.html";
+  } else {
+    window.location.href = "/index-en.html";
+  }
+
+}
+
+/* Otherwise redirect after a short delay */
 setTimeout(function() {
-  window.location.href = "/";
-}, 4000);
+
+  if (lang.startsWith("pt")) {
+    window.location.href = "/index.html";
+  } else {
+    window.location.href = "/index-en.html";
+  }
+
+}, 3000);
+
 </script>
 
 					
