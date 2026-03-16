@@ -163,7 +163,7 @@ body {
 }
 
 a {
-  color: #6D8B8B;
+  color: #9b9b9b;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -171,7 +171,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 a:hover {
-  color: #232ae5;
+  color: #6D8B8B;
   text-decoration: none;
 }
 
@@ -8513,24 +8513,4 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
     margin-bottom: 15px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
