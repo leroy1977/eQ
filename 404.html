@@ -14,6 +14,8 @@
   gtag('config', 'G-MTL6WB0X99');
 </script>
 
+<base href="https://www.equanta.com.br/">
+
 	
     <!-- Document Meta
     ============================================= -->
@@ -98,30 +100,23 @@
 	<li> 
 		<a href="index.html" class="dropdown-toggle menu-item">Home</a>
 	</li>	
+
 <!-- Sobre -->
 	<li> 
 		<a href="sobre-equanta.html" class="dropdown-toggle menu-item">Sobre Nós</a>
 	</li>
-<!-- li end -->
 
 <!-- servicos -->
 	<li> 
 		<a href="servicos-ambientais.html" class="dropdown-toggle menu-item">Serviços</a>
 	</li>
-<!-- li end -->
-
-<!-- Ajuda -->
-<!--	<li> -->
-<!--		<a href="ajuda-faq-duvidas-licenciamento-ambiental.html" class="dropdown-toggle menu-item">Ajuda</a> -->
-<!--	</li> -->
-<!-- li end -->
 
 <!-- contato -->
 	<li> 
 		<a href="contato-equanta.html" class="dropdown-toggle menu-item">Contato</a>
 	</li>
+
 <!-- li end -->
-	
 	
 				
 </header>
@@ -187,18 +182,15 @@ VOLTAR À PÁGINA INICIAL / RETURN TO HOMEPAGE
 
 <script>
 
-var lang = (navigator.language || "").toLowerCase();
+if (location.pathname !== "/404.html") {
 
-/* wait a few seconds so users can read the message */
-setTimeout(function() {
+  var clean = location.pathname.replace(/\/{2,}/g,"/");
 
-  if (lang.startsWith("pt")) {
-    window.location.replace("/index.html");
-  } else {
-    window.location.replace("/index-en.html");
+  if (clean !== location.pathname) {
+    history.replaceState(null,"",clean);
   }
 
-}, 3500);
+}
 
 </script>
 
