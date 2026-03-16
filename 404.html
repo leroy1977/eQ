@@ -187,32 +187,18 @@ VOLTAR À PÁGINA INICIAL / RETURN TO HOMEPAGE
 
 <script>
 
-var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+var lang = (navigator.language || "").toLowerCase();
 
-/* Normalize the path by collapsing multiple slashes */
-var cleanPath = window.location.pathname.replace(/\/{2,}/g, "/");
-
-/* If the cleaned path is only "/" redirect to homepage */
-if (cleanPath === "/") {
-
-  if (lang.startsWith("pt")) {
-    window.location.href = "/index.html";
-  } else {
-    window.location.href = "/index-en.html";
-  }
-
-}
-
-/* Otherwise redirect after a short delay */
+/* wait a few seconds so users can read the message */
 setTimeout(function() {
 
   if (lang.startsWith("pt")) {
-    window.location.href = "/index.html";
+    window.location.replace("/index.html");
   } else {
-    window.location.href = "/index-en.html";
+    window.location.replace("/index-en.html");
   }
 
-}, 3000);
+}, 3500);
 
 </script>
 
