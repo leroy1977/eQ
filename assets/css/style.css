@@ -2338,7 +2338,7 @@ ul.dot-list li:before {
 .accordion .card .card-heading a,
 .accordion .card:first-of-type .card-heading a,
 .accordion .card:not(:first-of-type):not(:last-of-type) .card-heading a {
-  font-size: 15px;
+  font-size: 16px;
   color: #282828;
   font-weight: 600;
   line-height: 20px;
@@ -4114,7 +4114,7 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 .page-title .title--heading {
   margin-bottom: 13px;
 }
-
+/*------------------------------------*\
 .page-title .title--heading h1 {
   color: #ffffff;
   font-size: 60px;
@@ -4123,6 +4123,45 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
   margin-bottom: 0;
   text-transform: capitalize;
 }
+\*------------------------------------*/
+
+.page-title .title--heading h1 {
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: capitalize;
+
+  font-size: clamp(28px, 6vw, 60px);
+  line-height: 1.2;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+
+
+/*For very small mobile devices-------*\
+\*------------------------------------*/
+
+.page-title .title {
+  padding: 260px 0 168px 0;
+}
+
+@media (max-width: 768px) {
+  .page-title .title {
+    padding: 140px 0 100px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title .title {
+    padding: 100px 0 70px 0;
+  }
+}
+
+/*---------------------*\
+\*---------------------*/
+
 
 .page-title .title--desc p {
   color: #f9f9f9;
@@ -8154,8 +8193,21 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 }
 .footer .footer-widget {
   padding-top: 100px;
-  padding-bottom: 84px;
+  padding-bottom: 40px;
 }
+
+@media (max-width: 768px) {
+  .footer .footer-widget {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+
+.footer--bar {
+  padding: 10px 0;
+}
+
+
 .footer .footer--widget-title h5 {
   color: #ffffff;
   font-size: 15px;
@@ -8514,3 +8566,123 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
   }
 }
 
+
+
+
+/* 1. Fix footer parallax issues on mobile */
+@media (max-width: 991px) {
+  #footerParallax {
+    position: relative;
+    z-index: 1;
+  }
+
+  #wrapperParallax {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* 2. Fix text breaking */
+.footer p,
+.footer a,
+.footer li {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* 3. Fix link layout */
+.footer .widget--links ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer .widget--links ul li {
+  width: 50%;
+  float: none;
+}
+
+@media (max-width: 480px) {
+  .footer .widget--links ul li {
+    width: 100%;
+  }
+}
+
+/* 4. Improve spacing */
+@media (max-width: 768px) {
+  .footer .footer-widget {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+}
+
+/* 5. Safe images */
+.footer .widget--content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Fix footer copyright line */
+.footer--copyright .copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Ensure proper wrapping behavior */
+.footer--copyright .copyright {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Mobile: stack cleanly */
+@media (max-width: 480px) {
+  .footer--copyright .copyright {
+    flex-direction: column;
+  }
+}
+
+
+/* Fix spacing between inline elements inside flex */
+.footer--copyright .copyright > * {
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+/* Remove extra space after last element */
+.footer--copyright .copyright > *:last-child {
+  margin-right: 0;
+}
+
+
+
+
+
+
+
+/* GLOBAL RESPONSIVENESS SAFETY */
+/* Prevent overflow everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Images and media */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow */
+body {
+  overflow-x: hidden;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, li {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
