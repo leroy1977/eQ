@@ -64,28 +64,30 @@
       history.replaceState(null, "", clean);
     }
   }
-        // 2. List the paths that should show the "Under Review" page
-  const reviewPaths = [
-    '/licenciamento-ambiental.html',
-    '/environmental-compliance-permitting.html',
-    '/avaliacao-estrategica-territorios.html',
-    '/strategic-territory-assessment.html',
-    '/monitoramento-ambiental-analise-dados.html',
-    '/environmental-monitoring-data-analysis.html',
-    '/recuperacao-ambiental.html',
-    '/environmental-restoration.html',
-    '/educacao-ambiental-esg.html',
-    '/environmental-education-esg.html
+        // 2. List the keywords that should show the "Under Review" page
+  const reviewKeywords = [
+    '/licenciamento-ambiental',
+    '/environmental-compliance-permitting',
+    '/avaliacao-estrategica-territorios',
+    '/strategic-territory-assessment',
+    '/monitoramento-ambiental-analise-dados',
+    '/environmental-monitoring-data-analysis',
+    '/recuperacao-ambiental',
+    '/environmental-restoration',
+    '/educacao-ambiental-esg',
+    '/environmental-education-esg
   ];
 
-  	// 3. Clean the current URL path, Normalizes the path (removes trailing slashes)
-  const currentPath = window.location.pathname.replace(/\/$/, "");
+  // 3. Check if any of our keywords exist in the current URL
+  const shouldRedirect = reviewKeywords.some(keyword => 
+    location.pathname.toLowerCase().includes(keyword.toLowerCase())
+  );
 
-  	// 4. Decision Logic
-  if (reviewPaths.includes(currentPath)) {
-  	// Redirect to your internal-styled page
-       window.location.replace("/undereview.html");
-        }
+  if (shouldRedirect) {
+    // Redirect instantly to your self-contained page
+    // We use a relative path "./" to ensure it works on GitHub subfolders
+    window.location.replace("./undereview.html");
+  }
     </script>
 
 
@@ -216,8 +218,7 @@ VOLTAR À PÁGINA INICIAL / RETURN TO HOMEPAGE
     </div><!-- .container end -->
 </section><!-- #work end -->
 
-<!-- 
-<script>
+<!-- <script>
 
 if (location.pathname !== "/404.html") {
 
