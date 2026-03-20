@@ -25,29 +25,10 @@ function normalizePath(path) {
     return path;
 }
 
-function routePage() {
-    let path = normalizePath(window.location.pathname);
+(function () {
+    const path = window.location.pathname;
 
-    // Normalize URL if needed (SEO-safe)
-    if (path !== window.location.pathname) {
-        window.location.replace(path);
-        return;
-    }
-
-    // Skip homepage
-    if (path === '/' || path === '/index.html' || path === '/index-en.html') {
-        return;
-    }
-
-    // 🚧 Under review logic (ONLY client-side routing needed)
     if (underReviewPages.has(path)) {
         window.location.replace('/undereview.html');
-        return;
     }
-
-    // ❌ No 404 handling here
-    // GitHub Pages will handle it natively
-}
-
-// Run ASAP (before render delay)
-routePage();
+})();
