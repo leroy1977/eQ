@@ -1,5 +1,6 @@
 // List of pages under review - UPDATE THIS MANUALLY
-const underReviewPages = [
+// Pages intentionally disabled
+const underReviewPages = new Set([
     '/licenciamento-ambiental.html',
     '/environmental-compliance-permitting.html',
     '/avaliacao-estrategica-territorios.html',
@@ -10,55 +11,43 @@ const underReviewPages = [
     '/environmental-restoration.html',
     '/educacao-ambiental-esg.html',
     '/environmental-education-esg.html'
-];
+]);
 
-// Main routing function
-async function routePage() {
-    // Get the current path
-    const currentPath = window.location.pathname;
-    
-    // Don't route for homepage
-    if (currentPath === '/' || currentPath === '/index.html') {
-        return;
+function normalizePath(path) {
+    // Remove duplicate slashes
+    path = path.replace(/\/{2,}/g, '/');
+
+    // Remove trailing slash (except root)
+    if (path.length > 1 && path.endsWith('/')) {
+        path = path.slice(0, -1);
     }
-    
-    // Check if the page is under review FIRST
-    if (underReviewPages.includes(currentPath)) {
-        // Load under review page
-        const response = await fetch('/undereview.html');
-        const html = await response.text();
-        
-        // Replace current page with under review content
-        document.open();
-        document.write(html);
-        document.close();
-        return;
-    }
-    
-    // Check if the page exists
-    try {
-        const response = await fetch(currentPath, { method: 'HEAD' });
-        
-        if (!response.ok) {
-            // Load 404 page
-            const response404 = await fetch('/404.html');
-            const html404 = await response404.text();
-            
-            document.open();
-            document.write(html404);
-            document.close();
-        }
-        // If page exists, do nothing - let it load normally
-    } catch {
-        // Load 404 page on error
-        const response404 = await fetch('/404.html');
-        const html404 = await response404.text();
-        
-        document.open();
-        document.write(html404);
-        document.close();
-    }
+
+    return path;
 }
 
-// Run when page loads
+function routePage() {
+    let path = normalizePath(window.location.pathname);
+
+    // Normalize URL if needed (SEO-safe)
+    if (path !== window.location.pathname) {
+        window.location.replace(path);
+        return;
+    }
+
+    // Skip homepage
+    if (path === '/' || path === '/index.html' || path === '/index-en.html') {
+        return;
+    }
+
+    // 🚧 Under review logic (ONLY client-side routing needed)
+    if (underReviewPages.has(path)) {
+        window.location.replace('/undereview.html');
+        return;
+    }
+
+    // ❌ No 404 handling here
+    // GitHub Pages will handle it natively
+}
+
+// Run ASAP (before render delay)
 routePage();
