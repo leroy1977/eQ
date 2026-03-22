@@ -100,9 +100,9 @@ class LanguageSwitcher {
         const li = document.createElement("li");
         li.classList.add("nav-item", "language-switcher");
         li.innerHTML = `
-            <a href="#" class="menu-item lang-link ${this.currentLang === "pt" ? "active" : ""}" data-lang="pt">PT</a>
+            <a href="#" class="menu-item lang-link ${this.currentLang === "pt" ? "active" : ""}" data-lang="pt"><span class="lang-flag">🇧🇷</span> PT</a>
             <span class="divider"> | </span>
-            <a href="#" class="menu-item lang-link ${this.currentLang === "en" ? "active" : ""}" data-lang="en">EN</a>
+            <a href="#" class="menu-item lang-link ${this.currentLang === "en" ? "active" : ""}" data-lang="en"><span class="lang-flag">🇺🇸</span> EN</a>
         `;
         navList.appendChild(li);
 
