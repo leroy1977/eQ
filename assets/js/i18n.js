@@ -285,7 +285,7 @@ const eQTranslations = {
     "nav.contact": "Contacto",
     "nav.lang.pt": "PT",
     "nav.lang.en": "EN",
-
+    "nav.lang.es": "ES",
     // Footer
     "footer.tagline": "Estudios Ambientales para la Conservación de la Biodiversidad y la Calidad de Vida Humana",
     "footer.sitemap": "Mapa del Sitio",
