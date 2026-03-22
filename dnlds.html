@@ -77,7 +77,7 @@
 </head>
 
 
-<body>
+<body data-page="downloads">
     <div class="preloader">
         <div class="signal"></div>
     </div>
@@ -100,26 +100,21 @@
 				<ul class="navbar-nav ml-auto">
 	
 <!-- Index -->
-	<li> 
-		<a href="index.html" class="dropdown-toggle menu-item">Home</a>
-	</li>	
+	<li>
+		<a href="index.html" class="dropdown-toggle menu-item" data-i18n="nav.home">Home</a>
+	</li>
 <!-- Sobre -->
-	<li> 
-		<a href="sobre-equanta.html" class="dropdown-toggle menu-item">Sobre Nós</a>
+	<li>
+		<a href="sobre-equanta.html" class="dropdown-toggle menu-item" data-i18n="nav.about">Sobre Nós</a>
 	</li>
-<!-- li end -->
-
 <!-- servicos -->
-	<li> 
-		<a href="servicos-ambientais.html" class="dropdown-toggle menu-item">Serviços</a>
+	<li>
+		<a href="servicos-ambientais.html" class="dropdown-toggle menu-item" data-i18n="nav.services">Serviços</a>
 	</li>
-<!-- li end -->
-
 <!-- contato -->
-	<li> 
-		<a href="contato-equanta.html" class="dropdown-toggle menu-item">Contato</a>
+	<li>
+		<a href="contato-equanta.html" class="dropdown-toggle menu-item" data-i18n="nav.contact">Contato</a>
 	</li>
-<!-- li end -->
 	
 	
 				
@@ -136,12 +131,12 @@
             <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
                 <div class="title text-center">
                     <div class="title--heading">
-                        <h1>Biblioteca de Recursos Ambientais</h1>
+                        <h1 data-i18n="downloads.pagetitle">Biblioteca de Recursos Ambientais</h1>
                     </div>
                     <div class="clearfix"></div>
                     <ol class="breadcrumb d-flex justify-content-center">
-                     <li class="breadcrumb-item"><a href="index-3.html">Home</a></li> 
-                     <li class="breadcrumb-item active" aria-current="page">Downloads</li> 
+                     <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+                     <li class="breadcrumb-item active" aria-current="page" data-i18n="downloads.breadcrumb">Downloads</li>
                     </ol>
                 </div><!-- .title end -->
             </div><!-- .col-lg-8 end -->
@@ -156,9 +151,9 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="work--title">
-                    <h3>Documentos & Guias Ambientais</h3>
+                    <h3 data-i18n="downloads.heading">Documentos & Guias Ambientais</h3>
 		<br>
-		<p>Acesse materiais e guias que apoiam a gestão e conservação ambiental.</p>
+		<p data-i18n="downloads.desc">Acesse materiais e guias que apoiam a gestão e conservação ambiental.</p>
                 </div>
             	</div><!-- .col-lg-12 end -->
             	<div class="col-sm-12 col-md-12 col-lg-12">
@@ -193,7 +188,7 @@ class="fusion-checklist fusion-checklist-1" style="font-size:16px;line-height:27
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget-about">
                     <div class="widget--content">
                         <img class="footer-logo" src="assets/images/logo/logo_slogan_BR_oficial_2025_path.svg" alt="logo equanta environmental compliance">
-                        <p>Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana</p>
+                        <p data-i18n="footer.tagline">Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana</p>
                         <div class="social--icons">
        			<a target="_blank" href="https://pt-br.facebook.com/eQuanta.env/" class="facebook"><i class="fa fa-facebook"></i></a>
       	 		<a target="_blank" href="https://www.instagram.com/eq.uanta/" class="instagram"><i class="fa fa-instagram"></i></a>	
@@ -203,7 +198,7 @@ class="fusion-checklist fusion-checklist-1" style="font-size:16px;line-height:27
                 </div><!-- .col-lg-3 end -->
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--links">
                     <div class="footer--widget-title">
-                        <h5>Mapa do Site</h5>
+                        <h5 data-i18n="footer.sitemap">Mapa do Site</h5>
                     </div>
                     <div class="widget--content">
                         <ul>
@@ -216,7 +211,7 @@ class="fusion-checklist fusion-checklist-1" style="font-size:16px;line-height:27
                 </div><!-- .col-lg-3 end -->
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--contact-info">
                     <div class="footer--widget-title">
-                        <h5>Empresa </h5>
+                        <h5 data-i18n="footer.company">Empresa</h5>
                     </div>
                      <div class="widget--content">
                         <p><img class="footer-logo" src="assets/images/logo/logo_dnausp.png" width="50%" height="auto" style="margin: 4px 6px 0px 0px;" alt="  - eQuanta - Serviços Ambientais">
@@ -227,11 +222,11 @@ class="fusion-checklist fusion-checklist-1" style="font-size:16px;line-height:27
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--newsletter">
 		<br><br>
                     <div class="widget--content">
-                     <p><b>Somos uma Empresa Digital</b>
-			<br>	
-			Sede: São Paulo - SP
-			<br>	
-			Atendimento: Segunda a Sexta-feira, 09:00 - 18:00
+                     <p><b data-i18n="footer.digital">Somos uma Empresa Digital</b>
+			<br>
+			<span data-i18n="footer.hq">Sede: São Paulo - SP</span>
+			<br>
+			<span data-i18n="footer.hours">Atendimento: Segunda a Sexta-feira, 09:00 - 18:00</span>
 			</p>
                     </div>
                 </div><!-- .col-lg-3 end -->	
@@ -254,7 +249,8 @@ class="fusion-checklist fusion-checklist-1" style="font-size:16px;line-height:27
 <script src="https://kit.fontawesome.com/a7a0d0c36c.js" crossorigin="anonymous"></script>
 
 <!-- Add before closing </body> tag: calling language switcher script -->
-<script src="assets/js/language-switcher.js"></script>					
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/language-switcher.js"></script>
 
 <!-- Footer Scripts
 ============================================= -->
