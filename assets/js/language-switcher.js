@@ -4,7 +4,7 @@
 class LanguageSwitcher {
 
     constructor() {
-        this.supportedLangs = ["pt", "en"];
+        this.supportedLangs = ["pt", "en", "es"];
         this.defaultLang = "pt";
         this.currentLang = this.detectLanguage();
         document.addEventListener("DOMContentLoaded", () => this.init());
@@ -103,6 +103,8 @@ class LanguageSwitcher {
             <a href="#" class="menu-item lang-link ${this.currentLang === "pt" ? "active" : ""}" data-lang="pt"><span class="lang-flag">🇧🇷</span> PT</a>
             <span class="divider"> | </span>
             <a href="#" class="menu-item lang-link ${this.currentLang === "en" ? "active" : ""}" data-lang="en"><span class="lang-flag">🇺🇸</span> EN</a>
+            <span class="divider"> | </span>
+            <a href="#" class="menu-item lang-link ${this.currentLang === "es" ? "active" : ""}" data-lang="es"><span class="lang-flag">🇪🇸</span> ES</a>
         `;
         navList.appendChild(li);
 
