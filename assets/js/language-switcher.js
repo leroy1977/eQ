@@ -7,7 +7,11 @@ class LanguageSwitcher {
         this.supportedLangs = ["pt", "en", "es"];
         this.defaultLang = "pt";
         this.currentLang = this.detectLanguage();
-        document.addEventListener("DOMContentLoaded", () => this.init());
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", () => this.init());
+        } else {
+            this.init();
+        }
     }
 
     detectLanguage() {
@@ -118,11 +122,9 @@ class LanguageSwitcher {
 
     init() {
         this.createLanguageSwitcher();
-        // Apply translations if not default PT
-        if (this.currentLang !== this.defaultLang) {
-            this.applyTranslations();
-            this.updateHtmlLang();
-        }
+        this.applyTranslations();
+        this.updateSwitcherUI();
+        this.updateHtmlLang();
     }
 }
 
