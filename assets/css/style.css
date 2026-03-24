@@ -251,7 +251,7 @@ hr {
     }
 
     .language-switcher .divider {
-        display: none;
+        display: inline;
     }
 }
 

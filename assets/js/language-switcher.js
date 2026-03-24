@@ -1,147 +1,131 @@
 // Language Switcher for eQuanta website
+// Uses in-place translation via data-i18n attributes + eQTranslations object (i18n.js)
+
 class LanguageSwitcher {
 
     constructor() {
-
-        // Explicit page translations
-        this.pageMap = {
-            "index.html": "index-en.html",
-            "servicos-ambientais.html": "environmental-services.html",
-            "contato-equanta.html": "contact-equanta.html",
-            "sobre-equanta.html": "about-equanta.html",
-            "dnlds.html": "dnlds-en.html"
-        };
-
-        // Build reverse mapping automatically
-        this.reverseMap = Object.fromEntries(
-            Object.entries(this.pageMap).map(([pt, en]) => [en, pt])
-        );
-
-        this.currentLang = this.getCurrentLanguage();
-
-        document.addEventListener("DOMContentLoaded", () => this.init());
+        this.supportedLangs = ["pt", "en", "es"];
+        this.defaultLang = "pt";
+        this.currentLang = this.detectLanguage();
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", () => this.init());
+        } else {
+            this.init();
+        }
     }
 
-    getCurrentFile() {
-
-        let file = window.location.pathname.split("/").pop();
-
-        if (!file || file === "") file = "index.html";
-
-        return file;
-
-    }
-
-    getCurrentLanguage() {
-
-        const file = this.getCurrentFile();
-
-        if (this.reverseMap[file]) return "en";
-
-        return "pt";
-
+    detectLanguage() {
+        // 1. Check URL param: ?lang=en
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get("lang");
+        if (urlLang && this.supportedLangs.includes(urlLang)) {
+            localStorage.setItem("eqLang", urlLang);
+            return urlLang;
+        }
+        // 2. Check localStorage
+        const stored = localStorage.getItem("eqLang");
+        if (stored && this.supportedLangs.includes(stored)) {
+            return stored;
+        }
+        // 3. Check html lang attribute
+        const htmlLang = document.documentElement.lang;
+        if (htmlLang && htmlLang.startsWith("en")) return "en";
+        // 4. Default
+        return this.defaultLang;
     }
 
     setLanguage(lang) {
-
-        if (lang === this.currentLang) return;
-
-        this.redirectToLanguageVersion(lang);
-
+        if (!this.supportedLangs.includes(lang)) return;
+        this.currentLang = lang;
+        localStorage.setItem("eqLang", lang);
+        this.applyTranslations();
+        this.updateSwitcherUI();
+        this.updateHtmlLang();
     }
 
-    redirectToLanguageVersion(lang) {
+    applyTranslations() {
+        const translations = (typeof eQTranslations !== "undefined")
+            ? eQTranslations[this.currentLang]
+            : null;
+        if (!translations) return;
 
-        const file = this.getCurrentFile();
-
-        let target;
-
-        if (lang === "en") {
-
-            target = this.pageMap[file];
-
-            // fallback attempt
-            if (!target) {
-
-                if (file === "index.html") {
-                    target = "index-en.html";
-                }
-
+        // Apply text content
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[key] !== undefined) {
+                el.innerHTML = translations[key];
             }
+        });
 
-            // final fallback
-            if (!target) {
-                target = "index-en.html";
+        // Apply href attributes
+        document.querySelectorAll("[data-i18n-href]").forEach(el => {
+            const key = el.getAttribute("data-i18n-href");
+            if (translations[key] !== undefined) {
+                el.setAttribute("href", translations[key]);
             }
+        });
 
-        } else {
-
-            target = this.reverseMap[file];
-
-            if (!target) {
-
-                if (file === "index-en.html") {
-                    target = "index.html";
-                }
-
+        // Apply placeholder attributes
+        document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            if (translations[key] !== undefined) {
+                el.setAttribute("placeholder", translations[key]);
             }
+        });
 
-            if (!target) {
-                target = "index.html";
-            }
-
+        // Apply page title
+        const titleKey = document.body.getAttribute("data-page") + ".meta.title";
+        if (translations[titleKey]) {
+            document.title = translations[titleKey];
         }
 
-        window.location.href = target;
+        // Apply meta description
+        const descKey = document.body.getAttribute("data-page") + ".meta.desc";
+        const metaDesc = document.querySelector("meta[name='description']");
+        if (metaDesc && translations[descKey]) {
+            metaDesc.setAttribute("content", translations[descKey]);
+        }
+    }
 
+    updateHtmlLang() {
+        document.documentElement.lang = this.currentLang === "en" ? "en" : "pt-BR";
+    }
+
+    updateSwitcherUI() {
+        document.querySelectorAll(".lang-link").forEach(link => {
+            link.classList.toggle("active", link.dataset.lang === this.currentLang);
+        });
     }
 
     createLanguageSwitcher() {
-
         const navList = document.querySelector(".navbar-nav.ml-auto");
-
         if (!navList) return;
 
         const li = document.createElement("li");
-
         li.classList.add("nav-item", "language-switcher");
-
         li.innerHTML = `
-            <a href="#" class="menu-item lang-link ${this.currentLang === "pt" ? "active" : ""}" data-lang="pt">PT</a>
+            <a href="#" class="menu-item lang-link ${this.currentLang === "pt" ? "active" : ""}" data-lang="pt"><span class="lang-flag">🇧🇷</span> PT</a>
             <span class="divider"> | </span>
-            <a href="#" class="menu-item lang-link ${this.currentLang === "en" ? "active" : ""}" data-lang="en">EN</a>
+            <a href="#" class="menu-item lang-link ${this.currentLang === "en" ? "active" : ""}" data-lang="en"><span class="lang-flag">🇺🇸</span> EN</a>
+            <span class="divider"> | </span>
+            <a href="#" class="menu-item lang-link ${this.currentLang === "es" ? "active" : ""}" data-lang="es"><span class="lang-flag">🇪🇸</span> ES</a>
         `;
-
         navList.appendChild(li);
 
-        this.addEventListeners();
-
-    }
-
-    addEventListeners() {
-
-        document.querySelectorAll(".lang-link").forEach(link => {
-
+        li.querySelectorAll(".lang-link").forEach(link => {
             link.addEventListener("click", e => {
-
                 e.preventDefault();
-
-                const lang = link.dataset.lang;
-
-                this.setLanguage(lang);
-
+                this.setLanguage(link.dataset.lang);
             });
-
         });
-
     }
 
     init() {
-
         this.createLanguageSwitcher();
-
+        this.applyTranslations();
+        this.updateSwitcherUI();
+        this.updateHtmlLang();
     }
-
 }
 
 new LanguageSwitcher();
