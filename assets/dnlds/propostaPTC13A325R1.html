@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Técnica Integral - Licenciamento APRM-ATC Taiaçupeba</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 0 auto; padding: 30px; background-color: #f4f4f4; }
+        .main-card { background: #fff; padding: 45px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 10px solid #2e7d32; }
+        h1 { color: #2e7d32; border-bottom: 2px solid #eee; padding-bottom: 20px; font-size: 26px; text-align: center; text-transform: uppercase; }
+        h2 { color: #2e7d32; border-left: 5px solid #2e7d32; padding-left: 15px; margin-top: 35px; font-size: 1.4em; text-transform: uppercase; }
+        h3 { color: #388e3c; font-size: 1.1em; margin-bottom: 10px; }
+        
+        .technical-box { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; margin: 15px 0; }
+        
+        /* Header Logo */
+        .header-logo { text-align: center; margin-bottom: 25px; }
+        .header-logo img { max-height: 90px; }
+
+        /* Footer Logos */
+        .footer-logos { width: 420px; margin: 40px auto 0; border-collapse: collapse; }
+        .footer-logos td { width: 50%; padding: 15px 20px; vertical-align: middle; }
+        .footer-logos td:first-child { border-right: 1px solid #ddd; text-align: right; }
+        .footer-logos td:last-child { text-align: left; }
+        .footer-logos img { max-height: 70px; }
+        
+        /* Tabela de Cronograma */
+        .schedule-table { width: 100%; border-collapse: collapse; margin: 20px 0 10px 0; background: #fff; font-size: 13px; }
+        .schedule-table th { background-color: #2e7d32; color: white; padding: 12px; text-align: left; }
+        .schedule-table td { border: 1px solid #e0e0e0; padding: 10px; vertical-align: middle; }
+        .col-nowrap { white-space: nowrap; font-weight: bold; }
+        
+        .table-notes { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: 30px; }
+        .table-notes p { margin: 5px 0; }
+        
+        /* Cores Alinhadas ao Email */
+        .scenario-1 { border: 2px dashed #2e7d32; background-color: #fafffa; padding: 25px; border-radius: 8px; margin: 25px 0; }
+        .scenario-2 { border: 2px dashed #1976d2; background-color: #f0f7ff; padding: 25px; border-radius: 8px; margin: 25px 0; }
+        
+        .checklist-container { background-color: #fffde7; border: 2px solid #fbc02d; padding: 30px; border-radius: 8px; margin: 30px 0; }
+        .check-item { display: flex; align-items: center; margin-bottom: 10px; font-weight: 500; font-size: 16px; }
+        .check-item input { margin-right: 12px; transform: scale(1.2); }
+        
+        .price-tag { display: block; background: #fff9c4; padding: 15px; border-radius: 5px; font-size: 22px; font-weight: bold; text-align: center; margin-top: 15px; border: 1px solid #fbc02d; }
+        .price-tag-blue { display: block; background: #e3f2fd; padding: 15px; border-radius: 5px; font-size: 20px; font-weight: bold; text-align: center; margin-top: 15px; border: 1px solid #bbdefb; color: #1976d2; }
+        
+        .procuracao-box { background: #fafafa; border: 1px dashed #999; padding: 25px; font-family: 'Courier New', Courier, monospace; font-size: 13px; margin-top: 30px; line-height: 1.4; }
+        .cta-button { background: #ff6d00; color: white; padding: 15px 35px; border: none; border-radius: 50px; font-weight: bold; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; box-shadow: 0 5px 15px rgba(255,109,0,0.3); }
+        
+        @media print {
+            body { background: white; padding: 0; margin: 0; }
+            .main-card { box-shadow: none; border: none; padding: 0; margin: 0; }
+            .no-print { display: none !important; }
+            .technical-box, .scenario-1, .scenario-2, .checklist-container, .procuracao-box, table, tr, td { break-inside: avoid; page-break-inside: avoid; }
+            h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+            table { page-break-inside: auto; }
+            tr { page-break-inside: avoid; }
+            @page { margin: 18mm 15mm 18mm 15mm; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-card">
+    <div class="header-logo">
+        <a href="https://www.equanta.com.br" target="_blank" rel="noopener noreferrer" title="Abrir site da eQuanta">
+            <img src="https://www.equanta.com.br/assets/images/logo/logoblack_eQuanta.svg" alt="Logo eQuanta">
+        </a>
+    </div>
+
+    <h1>Proposta Técnica de Consultoria Integrada</h1>
+    <p style="text-align: center; font-size: 18px;"><strong>Distrito de Taiaçupeba, Mogi das Cruzes - SP</strong> | Lote: 1250 m²</p>
+    <p style="text-align: center; font-size: 14px; color: #666; margin-top: -10px;">Processo de Autorização para Supressão de Vegetação Nativa em APRM-ATC</p>
+
+    <h2>1. ESCOPO TÉCNICO DETALHADO</h2>
+    <div class="technical-box">
+        <h3>1.1. Enquadramento e Alinhamento Inicial (Scoping)</h3>
+        <p>Definição da estratégia regulatória ideal para o licenciamento ambiental e análise prévia da viabilidade de supressão conforme restrições da APRM-ATC.</p>
+        
+        <h3>1.2. Diagnóstico Ambiental (Baseline)</h3>
+        <p>Atividades de campo e levantamento botânico <em>in loco</em> para caracterização da vegetação nativa, determinação do estágio sucessório, mapeamento cartográfico e confecção do Laudo Técnico da Vegetação, em estrita conformidade com a <strong>Lei da Mata Atlântica (11.428/06)</strong> e legislações estaduais/municipais.</p>
+        
+        <h3>1.3. Elaboração de Peças Técnicas Consolidadas</h3>
+        <p>Desenvolvimento de Relatório Técnico-Fotográfico descritivo, Memoriais Descritivos Ambientais e Plantas/Mapas Ambientais georreferenciados (arquivos KML/Shapefiles) contendo a poligonal da vegetação e a área de intervenção pretendida.</p>
+
+        <h3>1.4. Instrução Processual Digital e Protocolo</h3>
+        <p>Montagem, auditoria documental (Checklist de Compliance) e protocolo do processo administrativo de supressão junto ao órgão licenciador competente (<strong>CETESB</strong> ou <strong>Secretaria de Meio Ambiente do Município</strong>).</p>
+
+        <h3>1.5. Diligenciamento Ativo (Expediting)</h3>
+        <p>Gestão contínua do processo: monitoramento semanal dos protocolos nos sistemas públicos, respostas céleres a eventuais exigências técnicas oficiais ("comunique-se") e acompanhamento presencial ou técnico de vistorias ambientais promovidas pelo órgão.</p>
+    </div>
+
+    <h2>2. CENÁRIOS DE INVESTIMENTO</h2>
+    
+    <div class="scenario-1">
+        <h3 style="color: #2e7d32; margin-top: 0; text-transform: uppercase;">Cenário 1: Processo Simplificado (Município ou Estado)</h3>
+        <p style="font-size: 14px; color: #555; margin-top: -5px;"><em>Focado em ocupação mínima e trâmite inicial regulatório, com medidas mitigatórias executadas prioritariamente no próprio lote.</em></p>
+        
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; margin-top: 15px;">
+            <thead>
+                <tr style="border-bottom: 2px solid #2e7d32; color: #2e7d32; font-weight: bold;">
+                    <th style="padding: 8px 0;">Etapa Operacional</th>
+                    <th style="padding: 8px 0; text-align: right;">Excl. Impostos</th>
+                    <th style="padding: 8px 0; text-align: right;">Incl. Impostos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #e0e0e0;">
+                    <td style="padding: 8px 0;">Preparação e Alinhamento (Scoping)</td>
+                    <td style="padding: 8px 0; text-align: right;">R$ 3.723,75</td>
+                    <td style="padding: 8px 0; text-align: right;">R$ 4.338,20</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e0e0e0;">
+                    <td style="padding: 8px 0;">Análise Cartográfica e Campo (Baseline)</td>
+                    <td style="padding: 8px 0; text-align: right;">R$ 5.585,62</td>
+                    <td style="padding: 8px 0; text-align: right;">R$ 6.507,32</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e0e0e0;">
+                    <td style="padding: 8px 0;">Laudo Técnico, Protocolo e Diligenciamento</td>
+                    <td style="padding: 8px 0; text-align: right;">R$ 9.309,38</td>
+                    <td style="padding: 8px 0; text-align: right;">R$ 10.845,53</td>
+                </tr>
+                <tr style="font-weight: bold; color: #2e7d32; font-size: 16px;">
+                    <td style="padding: 12px 0 0 0;">TOTAL DO INVESTIMENTO (CENÁRIO 1)</td>
+                    <td style="padding: 12px 0 0 0; text-align: right;">R$ 18.018,75</td>
+                    <td style="padding: 12px 0 0 0; text-align: right;">R$ 21.691,05</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="scenario-2">
+        <h3 style="color: #1976d2; margin-top: 0; text-transform: uppercase;">Cenário 2: Processo Completo (Ocupação Máxima / Compensação Externa)</h3>
+        <p style="font-size: 14px; color: #555; margin-top: -5px;"><em>Acionado caso haja opção por ocupação máxima do lote e/ou surjam exigências de compensação ambiental florestal externa em áreas de terceiros.</em></p>
+        <p>Inclui a elaboração de peças técnicas adicionais, estudos suplementares e a gestão regulatória de restauração ou compensação fora da poligonal do imóvel.</p>
+        
+        <div class="price-tag-blue">
+            INVESTIMENTO ADICIONAL ESTIMADO: R$ 6.000,00 a R$ 8.000,00 <br>
+            <span style="font-size: 14px; font-weight: normal; color: #444;">+ R$ 400,00/mês de taxa de acompanhamento após o 12º mês de trâmite</span>
+        </div>
+        <p style="font-size: 12px; color: #d32f2f; margin-top: 10px; font-weight: bold; text-align: center;">*Nota: Custos diretos de aquisição de áreas, mudas ou cotas de compensação de terceiros são de responsabilidade exclusiva do cliente.</p>
+    </div>
+
+    <h2>3. CRONOGRAMA ESTIMADO DE EXECUÇÃO</h2>
+    <table class="schedule-table">
+        <thead>
+            <tr>
+                <th>Etapa</th>
+                <th>Atividade Operacional</th>
+                <th>Prazo Estimado</th>
+                <th>Responsável</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-nowrap">Fase 1</td>
+                <td>Briefing & Diagnóstico: Alinhamento, vistoria em campo e levantamento fitossociológico.</td>
+                <td class="col-nowrap">5 a 10 dias úteis</td>
+                <td>Consultoria</td>
+            </tr>
+            <tr>
+                <td class="col-nowrap">Fase 2</td>
+                <td>Elaboração Técnica: Confecção de Laudos de Vegetação, Memoriais e Mapas Ambientais.</td>
+                <td class="col-nowrap">7 a 12 dias úteis</td>
+                <td>Consultoria</td>
+            </tr>
+            <tr>
+                <td class="col-nowrap">Fase 3</td>
+                <td>Checklist & Protocolo: Conferência documental final e entrada no órgão licenciador.</td>
+                <td class="col-nowrap">3 a 5 dias úteis</td>
+                <td>Cons. / Cliente</td>
+            </tr>
+            <tr>
+                <td class="col-nowrap">Fase 4</td>
+                <td>Diligenciamento Ativo (Análise): Prazo interno de análise do Órgão Ambiental.</td>
+                <td class="col-nowrap">Variável</td>
+                <td>CETESB / Município</td>
+            </tr>
+            <tr>
+                <td class="col-nowrap">Fase 5*</td>
+                <td>Estudos Suplementares: Atendimento a exigências complexas ou desdobramentos de Cenário 2.</td>
+                <td class="col-nowrap">A definir</td>
+                <td>Consultoria</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="table-notes">
+        <p><strong>*Fase 5:</strong> Aplicável sob demanda caso ocorram novas condicionantes técnicas rígidas pelo órgão ou necessidade de direcionamento específico à estância estadual (CETESB).</p>
+        <p><strong>Marcos de Entrega (Milestones):</strong> O protocolo oficial do processo administrativo encerra a etapa de responsabilidade técnica de produção inicial e dá início à fase de avaliação do poder público.</p>
+        <p><strong>Interdependência Documental:</strong> O avanço rigoroso deste cronograma pressupõe o envio célere de todos os itens do Checklist de Onboarding pelo cliente.</p>
+    </div>
+
+    <h2>4. CHECKLIST DE ONBOARDING (DOCUMENTAÇÃO MANDATÓRIA)</h2>
+    <div class="checklist-container">
+        <p style="margin-top: 0;"><strong>Documentos necessários para instrução e protocolo digital do processo:</strong></p>
+        <div class="check-item"><input type="checkbox"> Documentos Pessoais do Proprietário (RG/CPF ou CNH e comprovante de residência)</div>
+        <div class="check-item"><input type="checkbox"> Matrícula do Imóvel Atualizada (emitida nos últimos 30 dias)</div>
+        <div class="check-item"><input type="checkbox"> Certidão de Uso e Ocupação do Solo atualizada (emitida pela Prefeitura de Mogi das Cruzes)</div>
+        <div class="check-item"><input type="checkbox"> Espelho do IPTU do imóvel</div>
+        <div class="check-item"><input type="checkbox"> Projeto de Implantação Arquitetônica / Planta de Medidas do projeto</div>
+        <div class="check-item"><input type="checkbox"> Levantamento Planialtimétrico e/ou Topográfico georreferenciado</div>
+        <div class="check-item"><input type="checkbox"> Procuração Ambiental Assinada (conforme modelo abaixo)</div>
+    </div>
+
+    <h2>5. MODELO DE PROCURAÇÃO PARA INSTRUÇÃO PROCESSUAL</h2>
+    <div class="procuracao-box">
+        <strong>OUTORGANTE:</strong> [NOME DO CLIENTE], CPF: [NÚMERO], residente e domiciliado em [ENDEREÇO].<br>
+        <strong>OUTORGADO:</strong> eQuanta Estudos Ambientais, CNPJ: 18.984.648/0001-05, com sede em Alto Tietê - SP.<br>
+        <strong>OBJETO:</strong> Representação legal e técnica perante a CETESB e a Secretaria de Meio Ambiente do Município de Mogi das Cruzes, com a finalidade estrita de protocolar, acompanhar, peticionar e diligenciar processos administrativos de Licenciamento Ambiental e Autorização para Supressão de Vegetação Nativa em lote localizado no Distrito de Taiaçupeba, Mogi das Cruzes - SP.<br>
+        <strong>PODERES:</strong> Protocolar documentos, realizar uploads em sistemas, assinar requerimentos e formulários ambientais, solicitar certidões, responder a exigências técnicas ("comunique-se"), agendar e acompanhar vistorias de campo, e retirar licenças, autorizações e pareceres emitidos.
+    </div>
+
+    <div class="no-print" style="text-align: center; margin-top: 50px;">
+        <button onclick="window.print()" class="cta-button">📄 SALVAR PROPOSTA EM PDF</button>
+        <a href="https://www.equanta.com.br/assets/dnlds/contratoPTC13A325R1.html" target="_blank" class="cta-button" style="margin-left:15px; background-color: #2e7d32;">📑 ACESSAR CONTRATO DIGITAL</a>
+    
+
+        <!-- FOOTER LOGOS SNIPPET -->
+    <table class="footer-logos">
+        <tr>
+            <td>
+                <a href="https://www.equanta.com.br/" target="_blank" rel="noopener noreferrer" title="Abrir site da eQuanta">
+                    <img src="https://www.equanta.com.br/assets/images/logo/logo_eQ_2025.svg" alt="Logo eQ" style="max-width: 250px; height: auto;">
+                </a>
+            </td>
+            <td>
+                <a href="mailto:info@eQuanta.com" target="_blank" rel="noopener noreferrer" title="Enviar email à eQuanta">
+                    <img src="https://www.equanta.com.br/assets/images/logo/email.logo_eQ_footer_2025.svg" alt="Logo eQ email" style="max-width: 250px; height: auto;">
+                </a>
+            </td>
+        </tr>
+    </table>
+    
+        <p style="font-size: 14px; margin-top: 20px;">© eQuanta Estudos Ambientais CNPJ: 18.984.648/0001-05 | São Paulo - SP </p>
+        
+    </div> 
+    </div>   
+        
+        
