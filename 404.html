@@ -75,7 +75,7 @@
     <title>eQuanta - Modelagem para Estudos de Biodiversidade - Consultoria Ambiental</title>
 
 </head>
-<body>
+<body data-page="404">
     <div class="preloader">
         <div class="signal"></div>
     </div>
@@ -97,26 +97,21 @@
 			<div class="collapse navbar-collapse" id="navbarContent">
 				<ul class="navbar-nav ml-auto">
 <!-- Index -->
-	<li> 
-		<a href="index.html" class="dropdown-toggle menu-item">Home</a>
-	</li>	
-
+	<li>
+		<a href="index.html" class="dropdown-toggle menu-item" data-i18n="nav.home">Home</a>
+	</li>
 <!-- Sobre -->
-	<li> 
-		<a href="sobre-equanta.html" class="dropdown-toggle menu-item">Sobre Nós</a>
+	<li>
+		<a href="sobre-equanta.html" class="dropdown-toggle menu-item" data-i18n="nav.about">Sobre Nós</a>
 	</li>
-
 <!-- servicos -->
-	<li> 
-		<a href="servicos-ambientais.html" class="dropdown-toggle menu-item">Serviços</a>
+	<li>
+		<a href="servicos-ambientais.html" class="dropdown-toggle menu-item" data-i18n="nav.services">Serviços</a>
 	</li>
-
 <!-- contato -->
-	<li> 
-		<a href="contato-equanta.html" class="dropdown-toggle menu-item">Contato</a>
+	<li>
+		<a href="contato-equanta.html" class="dropdown-toggle menu-item" data-i18n="nav.contact">Contato</a>
 	</li>
-
-<!-- li end -->
 	
 				
 </header>
@@ -136,7 +131,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <ol class="breadcrumb d-flex justify-content-center">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">404</li>
                     </ol>
                 </div>
@@ -159,19 +154,17 @@
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="work--title">
                 <h2>404</h2>
-                <h3>Página Não Encontrada / Page Not Found</h3>
+                <h3 data-i18n="notfound.subtitle">Página Não Encontrada</h3>
                 <br>
 		</div>
             	</div><!-- .col-lg-12 end -->
             	<div class="col-sm-12 col-md-12 col-lg-12">
 
-<p>O endereço digitado não existe ou foi escrito incorretamente.</p>
-<p>The address you entered does not exist or may have been typed incorrectly.</p>
-<p>Se chegou aqui através de nosso link, a página pode estar em manutenção nesse momento. Retorne ao <a href="index.html"><u>início</u></a> ou entre em <a href="mailto:info@equanta.com.br"><u>contato</u></a> sempre que precisar, ou então aguarde-nos que logo estaremos de volta!</p>
-<p>If you got here through our weblink this page may be under some maintenance at the moment. Return to <a href="index.html"><u>home</u></a> or If you need to you can always <a href="mailto:info@equanta.com.br"><u>contact us</u></a>, otherwise we&rsquo;ll be back online shortly!</p>
+<p data-i18n="notfound.desc1">O endereço digitado não existe ou foi escrito incorretamente.</p>
+<p data-i18n="notfound.desc2">Se chegou aqui através de nosso link, a página pode estar em manutenção nesse momento. Retorne ao <a href="index.html"><u>início</u></a> ou entre em <a href="mailto:info@equanta.com.br"><u>contato</u></a> sempre que precisar, ou então aguarde-nos que logo estaremos de volta!</p>
 <br>
-<a class="button" href="https://www.equanta.com.br/">
-<u>VOLTAR À PÁGINA INICIAL / RETURN TO HOMEPAGE </u>
+<a class="button" href="https://www.equanta.com.br/" data-i18n="notfound.btn">
+<u>VOLTAR À PÁGINA INICIAL</u>
 </a>
 </div>			    
           
@@ -207,7 +200,7 @@ if (location.pathname !== "/404.html") {
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget-about">
                     <div class="widget--content">
                         <img class="footer-logo" src="assets/images/logo/logo_slogan_BR_oficial_2025_path.svg" alt="logo equanta environmental compliance">
-                        <p>Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana</p>
+                        <p data-i18n="footer.tagline">Estudos Ambientais para a Conservação da Biodiversidade e Qualidade de Vida Humana</p>
                         <div class="social--icons">
 		<a target="_blank" href="https://pt-br.facebook.com/eQuanta.env/" class="facebook"><i class="fa fa-facebook"></i></a>
 		<a target="_blank" href="https://www.instagram.com/eq.uanta/" class="instagram"><i class="fa fa-instagram"></i></a>	
@@ -217,20 +210,20 @@ if (location.pathname !== "/404.html") {
                 </div><!-- .col-lg-3 end -->
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--links">
                     <div class="footer--widget-title">
-                        <h5>Mapa do Site</h5>
+                        <h5 data-i18n="footer.sitemap">Mapa do Site</h5>
                     </div>
                     <div class="widget--content">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="sobre-equanta.html">Sobre Nós</a></li>
-                            <li><a href="servicos-ambientais.html">Serviços</a></li>
-                            <li><a href="contato-equanta.html">Contato</a></li>
+                            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                            <li><a href="sobre-equanta.html" data-i18n="nav.about">Sobre Nós</a></li>
+                            <li><a href="servicos-ambientais.html" data-i18n="nav.services">Serviços</a></li>
+                            <li><a href="contato-equanta.html" data-i18n="nav.contact">Contato</a></li>
                         </ul>
                     </div>
                 </div><!-- .col-lg-3 end -->
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--contact-info">
                     <div class="footer--widget-title">
-                        <h5>Empresa </h5>
+                        <h5 data-i18n="footer.company">Empresa</h5>
                     </div>
                     <div class="widget--content">
                         <p><img class="footer-logo" src="assets/images/logo/logo_dnausp.png" width="50%" height="auto" style="margin: 4px 6px 0px 0px;" alt="  logo eQuanta">
@@ -241,11 +234,11 @@ if (location.pathname !== "/404.html") {
                 <div class="col-sm-12 col-md-6 col-lg-3 footer--widget widget--newsletter">
 		<br><br>
                     <div class="widget--content">
-                      <p><b>Somos uma Empresa Digital</b>
-		      <br>	
-		      Sede: São Paulo - SP
-		      <br>	
-		      Atendimento: Segunda a Sexta-feira, 09:00 - 18:00
+                      <p><b data-i18n="footer.digital">Somos uma Empresa Digital</b>
+		      <br>
+		      <span data-i18n="footer.hq">Sede: São Paulo - SP</span>
+		      <br>
+		      <span data-i18n="footer.hours">Atendimento: Segunda a Sexta-feira, 09:00 - 18:00</span>
 	              </p>
                     </div>
                 </div><!-- .col-lg-3 end -->	
@@ -257,7 +250,7 @@ if (location.pathname !== "/404.html") {
         <div class="row">
             <div class="col-md-12 text--center footer--copyright">
                 <div class="copyright">
-		<span>&copy; </span> <a href="#">eQuanta</a> Estudos Ambientais | <i>Diligentia laborat in omnis silvae et maria</i>
+		<span>&copy; </span> <a href="#">eQuanta</a> <span data-i18n="footer.copyright">Estudos Ambientais</span> | <i>Diligentia laborat in omnis silvae et maria</i>
                 </div>
             </div>
         </div>
@@ -268,7 +261,8 @@ if (location.pathname !== "/404.html") {
 <script src="https://kit.fontawesome.com/a7a0d0c36c.js" crossorigin="anonymous"></script>
 
 <!-- Add before closing </body> tag: calling language switcher script -->
-<script src="assets/js/language-switcher.js"></script>
+<script src="assets/js/i18n.js?v=3"></script>
+<script src="assets/js/language-switcher.js?v=3"></script>
 
 
 <!-- Footer Scripts
