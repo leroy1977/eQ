@@ -5,11 +5,16 @@ class LanguageSwitcher {
 
         // Explicit page translations
         this.pageMap = {
-            "index.html": "index-en.html",
-            "servicos-ambientais.html": "environmental-services.html",
-            "contato-equanta.html": "contact-equanta.html",
-            "sobre-equanta.html": "about-equanta.html",
-            "dnlds.html": "dnlds-en.html"
+        "index.html": "index-en.html",
+        "servicos-ambientais.html": "environmental-services.html",
+        "contato-equanta.html": "contact-equanta.html",
+        "sobre-equanta.html": "about-equanta.html",
+        "licenciamento-ambiental.html": "environmental-compliance-permitting.html",
+    	"avaliacao-estrategica-territorios.html": "strategic-territory-assessment.html",
+    	"monitoramento-ambiental-inteligencia-dados.html": "environmental-monitoring-data-intelligence.html",
+    	"recuperacao-compensacao-ambiental.html": "environmental-restoration-compensation.html",
+    	"impacto-educacao-ambiental-esg.html": "environmental-impact-education-esg.html",
+        "dnlds.html": "dnlds-en.html"
         };
 
         // Build reverse mapping automatically
