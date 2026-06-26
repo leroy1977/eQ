@@ -29,9 +29,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-services.html"/>
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/servicos-ambientais.html"/>
   </url>
+  
+    <!-- Contact -->
+  <url>
+    <loc>https://www.equanta.com.br/contato-equanta.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/contact-equanta.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/contato-equanta.html"/>
+  </url>
 
   <!-- Individual Services -->
-<!--  <url>
+  <url>
     <loc>https://www.equanta.com.br/licenciamento_ambiental.html</loc>
     <lastmod>2026-03-16</lastmod>
     <priority>0.80</priority>
@@ -43,7 +52,7 @@
     <loc>https://www.equanta.com.br/avaliacao-estrategica-territorios.html</loc>
     <lastmod>2026-03-16</lastmod>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/strategic-territory-assessment.html.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/strategic-territory-assessment.html"/>
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/avaliacao-estrategica-territorios.html"/>
   </url>
 
@@ -51,35 +60,24 @@
     <loc>https://www.equanta.com.br/monitoramento-ambiental-analise-dados.html</loc>
     <lastmod>2026-03-16</lastmod>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-monitoring-data-analysis.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/monitoramento-ambiental-analise-dados.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-monitoring-data-intelligence.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/monitoramento-ambiental-inteligencia-dados.html"/>
   </url>
 
   <url>
     <loc>https://www.equanta.com.br/recuperacao-ambiental.html</loc>
     <lastmod>2026-03-16</lastmod>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-restoration.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/recuperacao-ambiental.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-restoration-compensation.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/recuperacao-compensacao-ambiental.html"/>
   </url>
 
   <url>
     <loc>https://www.equanta.com.br/educacao-ambiental-esg.html</loc>
     <lastmod>2026-03-16</lastmod>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-education-esg.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/educacao-ambiental-esg.html"/>
-  </url>
--->
-
-
-  <!-- Contact -->
-  <url>
-    <loc>https://www.equanta.com.br/contato-equanta.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/contact-equanta.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/contato-equanta.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.equanta.com.br/environmental-impact-education-esg.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://www.equanta.com.br/impacto-educacao-ambiental-esg.html"/>
   </url>
 
 </urlset>
