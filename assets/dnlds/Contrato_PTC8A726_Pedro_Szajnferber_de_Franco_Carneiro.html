@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contrato de Prestação de Serviços Ambientais - eQuanta</title>
+    <style>
+        /* ==========================================
+           ESTILO UNIFICADO EMBUTIDO - EQUANTA
+           ========================================== */
+        :root {
+            --primary-color: #0b2240;    /* Azul Profundo */
+            --secondary-color: #ff6d00;  /* Laranja Solar */
+            --text-dark: #1e293b;        /* Grafite Escuro */
+            --text-light: #64748b;       /* Cinza */
+            --bg-light: #f8fafc;         /* Fundo Claro */
+            --border-color: #e2e8f0;     /* Linhas e Divisores */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f5f9;
+        }
+
+        /* Container do Documento (Tamanho A4 para impressão/PDF) */
+        .document-container {
+            background-color: #ffffff;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        /* Linha de marca no topo do contrato */
+        .brand-stripe {
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color) 70%, var(--secondary-color) 30%);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Cabeçalhos */
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 12px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 13px;
+            color: #334155;
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Campos de Variáveis */
+        .var-field {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Caixas de Destaque (Dados Bancários) */
+        .highlight-box {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            background: var(--bg-light);
+            margin: 15px 0;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* Tabelas (Cronograma no TdR) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            font-size: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+        .table-notes { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: 30px; }
+        .table-notes p { margin: 5px 0; }
+        
+        
+         .procuracao-box {
+            background: #fafafa;
+            border: 1px dashed #999;
+            padding: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            margin-top: 30px;
+            line-height: 1.4;
+        }
+
+        /* Quebra de Página para PDFs */
+        .page-break {
+            page-break-before: always;
+            border-top: 1px dashed var(--border-color);
+            margin-top: 50px;
+            padding-top: 40px;
+        }
+
+        /* Área de Assinaturas */
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .text-center { 
+            text-align: center; 
+        }
+        .signature-line {
+            border-top: 1px solid var(--text-dark);
+            text-align: center;
+            padding-top: 8px;
+            font-size: 11px;
+            margin-top: 40px;
+        }
+        
+        
+
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .document-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .technical-box,
+            .scenario-1,
+            .scenario-2,
+            .checklist-container,
+            .procuracao-box,
+            .bonus-box,
+            table,
+            tr,
+            td {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <div class="brand-stripe"></div>
+    
+    <h1>Instrumento Particular de Contrato de Prestação de Serviços de Consultoria Ambiental</h1>
+
+    <p class="paragrafo-contrato">
+        De um lado, como <strong>CONTRATADA</strong>, a pessoa jurídica de direito privado <strong>eQuanta Estudos Ambientais ltda.</strong>, sob o nome fantasia <strong>eQuanta Estudos Ambientais</strong>, optante pelo Simples Nacional, com sede fiscal à Rua Ponte Serrada, 20-A, São Paulo - SP, CEP 08290-595, inscrita no CNPJ/MF sob o nº 18.984.648/0001-05, com endereço eletrônico: info@equanta.com.br.
+    </p>
+
+    <p class="paragrafo-contrato">
+        Como <strong>INTERVENIENTE ANUENTE</strong>, o Sr. <strong>Euro Silva Lopes Filho</strong>, brasileiro, biólogo, portador da cédula de identidade RG nº 25.062.101-0 SSP/SP, e do CPF/MF sob o nº 248.329.178-38, na qualidade de pessoa física que constituiu a Contratada e que concorda e avaliza os termos dos serviços prestados.
+    </p>
+
+    <p class="paragrafo-contrato">
+        E, de outro lado, como <strong>CONTRATANTE</strong>, o(a) Sr(a). <span class="var-field">Pedro Szajnferber de Franco Carneiro</span>, portador(a) do CPF/CNPJ sob o nº <span class="var-field">281.365.108-73</span>, residente, domiciliado(a) ou sediado(a) à <span class="var-field">Rua Pedroso Alvarenga, 220, ap. 111, Itaim Bibi, São Paulo-SP</span>, com endereço eletrônico: <span class="var-field">pedro.carneiro@splaw.com.br</span>.
+    </p>
+
+    <p class="paragrafo-contrato">
+        As partes acima qualificadas têm, entre si, justo e contratado o presente instrumento, que se regerá pelas cláusulas e condições seguintes:
+    </p>
+
+    <h2>CLÁUSULA I - DO OBJETO, LOCAL E PRAZO DE ENTREGA</h2>
+    <p class="paragrafo-contrato">
+        1.1. O presente contrato refere-se à prestação de serviços vinculados ao Contrato Administrativo sob identificação <span class="var-field">PTC8A726</span>, para licenciamento, regularização e obtenção de Autorização de Supressão de Vegetação Nativa no lote residencial com área territorial de <span class="var-field">2015 m²</span>, localizado em <span class="var-field">LOTE 3, QUADRA U, Loteamento Jd. Costa Azul, Bairro Praia Dura, Ubatuba/SP</span>.
+    </p>
+    <p class="paragrafo-contrato">
+        1.2. A CONTRATADA prestará à CONTRATANTE os serviços técnicos descritos em estrita observância ao estabelecido nos <strong>Termos de Referência (TdR)</strong>, que constituem o <strong>ANEXO I</strong> deste contrato, intitulado <em>"Proposta Técnica de Consultoria Integrada "</em>.
+    </p>
+    <p class="paragrafo-contrato">
+        1.3. <strong>Local e Meio de Entrega:</strong> O objeto técnico contratado (estudos, laudos, mapas) deverá ser entregue gratuitamente à CONTRATANTE e isento de impostos incidentes na entrega, em formatos digitais (.PDF, .SHP e/ou .KML) endereçados ao e-mail cadastrado da CONTRATANTE, que acusará o recebimento por este mesmo meio.
+    </p>
+    <p class="paragrafo-contrato">
+        1.4. A entrega dos serviços/produtos técnicos obedecerá aos prazos estipulados no cronograma de atividades constante no TdR (Anexo I). Se a data final de entrega sob exclusiva responsabilidade do CONTRATADO for excedida, fica definido um <strong>período de tolerância de 7 (sete) dias úteis</strong>, findo o qual a CONTRATANTE poderá optar por declarar a rescisão por justa causa ou continuar a exigir a entrega.
+    </p>
+
+    <h2>CLÁUSULA II - DOS DEVERES DA CONTRATADA</h2>
+    <p class="paragrafo-contrato">2.1. Iniciar a execução dos serviços contratados obedecendo fielmente às especificações do TdR (Anexo I).</p>
+    <p class="paragrafo-contrato">2.2. Providenciar e manter qualificação técnica adequada dos profissionais que prestam serviços à CONTRATANTE, de acordo com as necessidades técnicas exigidas pelos órgãos licenciadores (CETESB/Prefeitura/Condephaat).</p>
+    <p class="paragrafo-contrato">2.3. Manter <strong>absoluto sigilo</strong> sobre as informações confidenciais de caráter pessoal, financeiro ou técnico relacionadas aos serviços e aos seus resultados, estendendo essa obrigação a todos os seus colaboradores técnicos.</p>
+    <p class="paragrafo-contrato">2.4. Responsabilizar-se por todos os pagamentos de honorários, encargos sociais e contribuições relacionados ao seu quadro de colaboradores envolvidos na execução, declarando que nenhuma obrigação trabalhista será imputada à CONTRATANTE.</p>
+    <p class="paragrafo-contrato">2.5. Reportar imediatamente à CONTRATANTE qualquer anormalidade, erro de terceiros ou irregularidade física que possa comprometer a execução técnica e o andamento das vistorias e análises.</p>
+    <p class="paragrafo-contrato">2.6. Concluir e disponibilizar à CONTRATANTE os serviços descritos nos prazos previstos no cronograma.</p>
+
+    <h2>CLÁUSULA III - DOS DEVERES DA CONTRATANTE</h2>
+    <p class="paragrafo-contrato">
+        3.1. Fornecer à CONTRATADA todas as informações, dados técnicos e documentos listados como necessários no checklist do TdR e/ou exigidos pelo órgão público licenciador (ex: matrícula do imóvel atualizada, IPTU, RG/CPF do proprietário, levantamento planialtimétrico). 
+    </p>
+    <p class="paragrafo-contrato">
+        3.2. A CONTRATANTE responde única, exclusiva, civil e criminalmente perante as autoridades ambientais pela <strong>autenticidade e legalidade de todos os dados e documentos</strong> fornecidos.
+    </p>
+    <p class="paragrafo-contrato">3.3. Remunerar pontualmente a CONTRATADA nos exatos valores, prazos e condições comerciais estabelecidos na Cláusula VII.</p>
+    <p class="paragrafo-contrato">3.4. Fiscalizar a execução e notificar a CONTRATADA por escrito (via e-mail) de forma imediata caso identifique quaisquer imperfeições ou falhas na execução dos serviços.</p>
+    <p class="paragrafo-contrato">3.5. <strong>Falta de Comunicação e Inércia do Contratante:</strong> Caso a CONTRATANTE permaneça inerte, deixe de responder às comunicações formais (via e-mail, telefone ou mensagens de texto) ou falhe em fornecer os documentos solicitados necessários para o início das atividades (checklist/briefing) ou necessários para o cumprimento de exigências técnicas do órgão licenciador ("Comunique-se") por um prazo superior a <strong>30 (trinta) dias corridos</strong> a partir da data de solicitação formal, a CONTRATADA fica autorizada a suspender imediatamente a execução e contagem de prazos de todos os serviços técnicos. 
+    Se a inércia ou ausência de comunicação superar o prazo limite de <strong>60 (sessenta) dias corridos</strong>, o presente instrumento poderá ser **rescindido por justa causa por culpa exclusiva da CONTRATANTE**, aplicando-se as penalidades de rescisão previstas na Cláusula XV deste contrato, incluindo a perda dos valores pagos a título de sinal/mobilização.</p></p>
+
+    <h2>CLÁUSULA IV - DA INEXISTÊNCIA DE VÍNCULO EMPREGATÍCIO</h2>
+    <p class="paragrafo-contrato">
+        4.1. As disposições do presente contrato não constituem qualquer relação empregatícia ou vínculo trabalhista entre a CONTRATANTE e os prepostos, funcionários, sócios, prestadores terceirizados ou os gestores técnicos da CONTRATADA.
+    </p>
+    <p class="paragrafo-contrato">
+        4.2. Na remota hipótese de qualquer um dos técnicos envolvidos no projeto demandar a CONTRATANTE em reclamação trabalhista ou medida judicial cível em decorrência dos serviços aqui contratados, a CONTRATADA obriga-se a requerer a exclusão imediata da CONTRATANTE do polo passivo, assumindo todas as despesas processuais e obrigando-se a reembolsar integralmente qualquer desembolso financeiro que a CONTRATANTE venha a ter.
+    </p>
+
+    <h2>CLÁUSULA V - DA FALTA DE CONFORMIDADE DOS SERVIÇOS E PRAZO DE RECLAMAÇÃO</h2>
+    <p class="paragrafo-contrato">
+        5.1. Se a CONTRATADA entregar serviços ou produtos contrários ao oferecido e especificado no contrato, a CONTRATANTE pode exigir as devidas correções sem ônus adicional. Para tanto, a CONTRATANTE deverá notificar formalmente a CONTRATADA, detalhando a desconformidade, concedendo um <strong>prazo mínimo de 10 (dez) dias úteis</strong> para a devida reparação ou substituição do arquivo técnico.
+    </p>
+    <p class="paragrafo-contrato">
+        5.2. Caso a desconformidade apontada não seja sanada dentro do período estabelecido no item 5.1 por culpa exclusiva da CONTRATADA, a CONTRATANTE poderá exigir redução proporcional no preço ou o reembolso dos valores específicos daquela etapa.
+    </p>
+    <p class="paragrafo-contrato">
+        5.3. <strong>Prazo Decadencial de Reclamação:</strong> As reclamações decorrentes de qualquer vício ou falta de conformidade de relatórios e mapas serão extintas caso a CONTRATANTE não notifique por escrito a CONTRATADA no prazo de <strong>3 (três) dias úteis</strong> após a constatação do fato, limitando-se ao prazo improrrogável de até <strong>5 (cinco) dias úteis</strong> após a data de entrega final de cada produto técnico.
+    </p>
+
+    <h2>CLÁUSULA VI - DO PRAZO E CONDIÇÃO DE INÍCIO</h2>
+    <p class="paragrafo-contrato">
+        6.1. O presente contrato é firmado por prazo determinado conforme o cronograma do TdR, ou até o cumprimento integral das obrigações da CONTRATADA junto ao órgão ambiental competente.
+    </p>
+    <p class="paragrafo-contrato">
+        6.2. <strong>Condição de Início (Garantia de Fluxo):</strong> O cronograma de prazos estipulado no TdR <strong>só iniciará formalmente</strong> após a verificação de três eventos cumulativos:
+    </p>
+    <ul>
+        <li>Assinatura eletrônica ou física deste contrato por ambas as partes;</li>
+        <li>Compensação bancária da quantia financeira de sinal correspondente à 1ª Parcela (mobilização);</li>
+        <li>Recebimento e validação, por parte da CONTRATADA, de todos os documentos técnicos básicos listados como necessários no checklist do TdR.</li>
+    </ul>
+
+    <h2>CLÁUSULA VII - DOS PREÇOS, CONDIÇÕES BANCÁRIAS E IMPOSTOS</h2>
+    <p class="paragrafo-contrato">
+        7.1. Em razão dos serviços prestados (Cenário 1 - Processo Simplificado), a CONTRATANTE pagará à CONTRATADA o valor fixado de <strong>R$ 14.315,28</strong>, estruturado em 4 (quatro) parcelas no valor de <strong>R$ 3.578,82</strong>.
+    </p>
+    <p class="paragrafo-contrato">
+        7.2. Os pagamentos deverão ser efetuados por meio de PIX ou transferência eletrônica identificada diretamente para a conta corrente da CONTRATADA:
+        <div class="highlight-box">
+            <strong>Banco Inter - 077</strong><br>
+            <strong>Agência:</strong> 0001<br>
+            <strong>Conta Corrente:</strong> 29551188-5<br>
+            <strong>Favorecido:</strong> eQuanta Estudos Ambientais ltda.<br>
+            <strong>CNPJ/PIX:</strong> 18.984.648/0001-05
+        </div>
+    </p>
+    <p class="paragrafo-contrato">
+        7.3. <strong>Reserva de Propriedade Intelectual (Reserva de Domínio):</strong> A propriedade intelectual e técnica de todos os objetos, plantas, relatórios e estudos gerados, mesmo que entregues digitalmente, pertencerá exclusivamente à CONTRATADA até a quitação integral do preço acordado, reservando-se o direito de retenção de títulos e direitos de uso em caso de inadimplência.
+    </p>
+    <p class="paragrafo-contrato">
+        7.4. O preço acordado contempla a cessão dos direitos de uso dos produtos, encargos sociais da CONTRATADA e tributos vinculados à sua emissão de Nota Fiscal de Serviços (Simples Nacional).
+    </p>
+    <p class="paragrafo-contrato">
+        7.5. <strong>Exclusão de Custos de Terceiros e Taxas:</strong> Custos referentes às taxas cobradas pelos órgãos municipais, estaduais e/ou federais para protocolar processos administrativos, emolumentos de análise de projetos, anotações de responsabilidade técnica (ART-CREA/CRBio), tarifas cartoriais, bem como resultantes de tributos de emissão de notas fiscais de outros profissionais parceiros (terceiros contratados para topografia, por exemplo) <strong>não estão contemplados no preço</strong> e serão pagos diretamente ou reembolsados pelo CONTRATANTE.
+    </p>
+
+    <h2>CLÁUSULA VIII - FLUXO DE PAGAMENTOS</h2>
+    <p class="paragrafo-contrato">
+    8.1. O fluxo de pagamentos pela execução dos serviços descritos no escopo inicial (Cenário 1) está estruturado em parcelas conforme cronograma abaixo:    
+    </p>
+       
+    <ul>
+        <li><strong>1ª Parcela:</strong> R$ 3.578,82 no ato de assinatura deste instrumento.</li>
+        <li><strong>2ª Parcela:</strong> R$ 3.578,82 com vencimento para 30 dias.</li>
+        <li><strong>3ª Parcela:</strong> R$ 3.578,82 com vencimento para 60 dias.</li>
+        <li><strong>4ª Parcela:</strong> R$ 3.578,82 com vencimento para 90 dias.</li>
+<!--        <li><strong>5ª Parcela:</strong> R$ 3.578,82 mediante despacho da autorização de supressão.</li> -->
+    </ul>
+
+    <p class="paragrafo-contrato">
+    8.2. A data de pagamento da 1ª Parcela deverá ocorrer no ato de assinatura do contrato em conjunto com o fornecimento dos documentos listados no checklist de onboarding, fixando a data de pagamento das parcelas seguintes.    
+    </p>
+
+<!--8.1. Os pagamentos previstos neste contrato seguirão rigorosamente o fluxo de entrega técnica especificado no TdR (Anexo I) e serão realizados mediante a efetiva entrega dos produtos correspondentes de cada fase. -->
+
+
+    <h2>CLÁUSULA IX - DO ATRASO NO PAGAMENTO</h2>
+    <p class="paragrafo-contrato">
+        9.1. O não pagamento de qualquer parcela em seu respectivo vencimento acarretará juros de mora à razão de <strong>1,2% (um vírgula dois por cento) ao mês</strong>, calculados <em>pro rata die</em> sobre o valor original do saldo pendente até a data do efetivo pagamento, acrescido da incidência de <strong>multa moratória de 2% (dois por cento)</strong> sobre o principal.
+    </p>
+    <p class="paragrafo-contrato">
+        9.2. A tolerância de atrasos por parte da CONTRATADA não constitui novação de obrigações ou renúncia aos direitos de cobrança.
+    </p>
+    <p class="paragrafo-contrato">
+        9.3. A tolerância de atraso não excederá o limite máximo de <strong>5 (cinco) dias corridos</strong>, após o qual a CONTRATADA poderá proceder com a rescisão imediata do contrato, protesto de título, reclamação de danos ou suspensão integral dos serviços.
+    </p>
+
+    <h2>CLÁUSULA X - DO INADIMPLEMENTO E SUSPENSÃO DE SERVIÇOS</h2>
+    <p class="paragrafo-contrato">
+        10.1. Caracterizado o atraso no pagamento superior a 5 (cinco) dias corridos, a CONTRATANTE será considerada formalmente em estado de inadimplência, facultando à CONTRATADA, após notificação prévia de cobrança, optar por:
+    </p>
+    <ul>
+        <li><strong>A interrupção imediata de todos os serviços técnicos, vistorias e do Expediting (monitoramento de processo)</strong> até a efetiva quitação dos débitos acrescidos de juros e multa;</li>
+        <li>O cancelamento das autorizações de uso de mapas e laudos junto aos órgãos ambientais (CETESB/Prefeitura), respondendo o cliente pelas consequências administrativas.</li>
+    </ul>
+    <p class="paragrafo-contrato">
+        10.2. A suspensão dos serviços motivada por inadimplemento financeiro do cliente desobriga a CONTRATADA do cumprimento do cronograma de prazos originais, que será postergado proporcionalmente aos dias de paralisação.
+    </p>
+
+    <h2>CLÁUSULA XI - DAS DESPESAS E REEMBOLSOS</h2>
+    <p class="paragrafo-contrato">
+        11.1. A CONTRATANTE reembolsará à CONTRATADA todas as despesas razoáveis diretamente relacionadas à execução física dos serviços (como deslocamentos de longa distância superiores a 50 km da sede, hospedagens ou impressões plotadas extraordinárias) <strong>quando e somente se previamente autorizadas por escrito</strong>.
+    </p>
+
+    <h2>CLÁUSULA XII - DIREITOS AUTORAIS E PORTFÓLIO</h2>
+    <p class="paragrafo-contrato">
+        12.1. A CONTRATADA cede e transfere à CONTRATANTE, de forma definitiva mediante a quitação integral do preço deste instrumento, todos os direitos patrimoniais de uso dos mapas, memoriais e laudos desenvolvidos sob a égide deste contrato.
+    </p>
+    <p class="paragrafo-contrato">
+        12.2. <strong>Uso de Portfólio (Direito de Divulgação):</strong> A CONTRATADA reserva-se o direito de divulgar este trabalho, imagens das vistorias técnicas (preservando o anonimato do cliente e dados sigilosos) em plataformas multimídias, redes sociais corporativas ou portfólio físico para fins de comprovação de capacidade técnica profissional.
+    </p>
+
+    <h2>CLÁUSULA XIII - DA GESTÃO DO CONTRATO</h2>
+    <p class="paragrafo-contrato">
+        13.1. Para a correta gestão técnica e administrativa deste instrumento, ficam indicados os seguintes gestores responsáveis:
+    </p>
+    <ul>
+        <li><strong>Pela CONTRATANTE:</strong> <span class="var-field">Pedro Szajnferber de Franco Carneiro</span> (ou representante legal designado).</li>
+        <li><strong>Pela CONTRADA:</strong> Sr. Euro Silva Lopes Filho.</li>
+    </ul>
+    <p class="paragrafo-contrato">
+        13.2. Caberá exclusivamente aos gestores a solução de dúvidas técnicas, alinhamento de etapas, solicitações e o gerenciamento geral das atividades.
+    </p>
+
+    <h2>CLÁUSULA XIV - DAS ALTERAÇÕES E ADITIVOS</h2>
+    <p class="paragrafo-contrato">
+        14.1. Qualquer modificação que altere prazos, escopo técnico de campo ou valores do presente contrato deverá ser formalizada de comum acordo entre as partes, obrigatoriamente por escrito, sob a forma de <strong>Termo Aditivo de Contrato</strong>.
+    </p>
+
+    <h2>CLÁUSULA XV - DA RESCISÃO</h2>
+    <p class="paragrafo-contrato">
+        15.1. A inobservância grave de qualquer cláusula deste instrumento assegura à parte inocente o direito de rescindir o contrato com justa causa e efeito imediato, mediante simples notificação por e-mail, respondendo a parte infratora por perdas e danos.
+    </p>
+    <p class="paragrafo-contrato">
+        15.2. Este contrato poderá ser rescindido sem justa causa por iniciativa de qualquer das partes, desde que comunicado por escrito com a <strong>antecedência mínima de 30 (trinta) dias corridos</strong>. Havendo etapas de serviços em andamento, as partes apurarão as pendências financeiras e técnicas proporcionais em um Termo de Encerramento e Distrato Técnico.
+    </p>
+
+    <h2>CLÁUSULA XVI - DA VALIDADE, COMUNICAÇÃO E SALVAGUARDA (DIVISIBILIDADE)</h2>
+    <p class="paragrafo-contrato">
+        16.1. Este contrato entra em vigor na data de sua assinatura física ou digital, englobando este texto e o Anexo I técnico.
+    </p>
+    <p class="paragrafo-contrato">
+        16.2. Todas as notificações técnicas e avisos decorrentes deste contrato deverão ser efetuados por escrito em língua portuguesa e enviados via e-mail corporativo cadastrado, servindo o registro eletrônico de envio como prova de entrega por texto.
+    </p>
+    <p class="paragrafo-contrato">
+        16.3. <strong>Salvaguarda (Divisibilidade):</strong> Caso qualquer disposição deste contrato seja declarada inválida, inexequível ou nula por decisão judicial, tal invalidez não afetará a validade de nenhuma das outras cláusulas. As partes comprometem-se, desde já, a substituir a disposição inválida por um texto legal que preserve o propósito comercial original.
+    </p>
+
+    <h2>CLÁUSULA XVII - DA LEI APLICÁVEL</h2>
+    <p class="paragrafo-contrato">
+        17.1. Este contrato é regido, interpretado e executado em estrita conformidade com a legislação da República Federativa do Brasil.
+    </p>
+
+    <h2>CLÁUSULA XVIII - DA MEDIAÇÃO PREVENTIVA</h2>
+    <p class="paragrafo-contrato">
+        18.1. Se surgirem disputas em conexão com a validade ou execução deste contrato, as partes comprometem-se formalmente a iniciar uma tentativa de conciliação extrajudicial por mediação, buscando um acordo amigável antes de ingressarem com ações judiciais.
+    </p>
+
+    <h2>CLÁUSULA XIX - DO FORO ELEITO</h2>
+    <p class="paragrafo-contrato">
+        19.1. As partes elegem, com renúncia expressa de qualquer outro por mais privilegiado que seja, o foro da <strong>Comarca de São Paulo - Estado de São Paulo</strong> para dirimir quaisquer litígios judiciais decorrentes deste instrumento.
+    </p>
+
+    <p class="text-center" style="margin-top: 40px; font-weight: 600;"><span class="var-field">São Paulo, SP, 8 de julho de 2026</span>.</p>
+
+    <div class="signature-grid">
+        <div class="signature-line">
+            <strong>CONTRATANTE:</strong><br>
+            <span class="var-field">Pedro Szajnferber de Franco Carneiro</span><br>
+            CPF/CNPJ: <span class="var-field">281.365.108-73</span>
+        </div>
+        <div class="signature-line">
+            <strong>CONTRATADA:</strong><br>
+            eQuanta Estudos Ambientais<br>
+            CNPJ: 18.984.648/0001-05
+        </div>
+    </div>
+    
+    <div class="signature-grid">
+        <div class="signature-line">
+            <strong>TESTEMUNHA 1:</strong><br>
+            Nome:<br>
+            CPF:
+        </div>
+        <div class="signature-line">
+            <strong>TESTEMUNHA 2:</strong><br>
+            Nome:<br>
+            CPF:
+        </div>
+    </div>
+
+    <div class="page-break">
+        <h1>ANEXO I - TERMO DE REFERÊNCIA (TdR)</h1>
+        <p class="text-center" style="font-style: italic; margin-top: -20px; font-size: 13px; color: #64748b;">
+            <span class="var-field">Proposta Técnica de Consultoria Integrada </span> <!-- - Processo Identificação: <span class="var-field">PTC8A726</span> -->
+        </p>
+        
+        <div class="highlight-box">
+            <strong>DADOS DE IDENTIFICAÇÃO DO EMPREENDIMENTO:</strong><br>
+            • <strong>Localização:</strong> <span class="var-field">LOTE 3, QUADRA U, Loteamento Jd. Costa Azul, Bairro Praia Dura, Ubatuba/SP</span><br>
+            • <strong>Área Territorial do Lote:</strong> <span class="var-field">2015 m²</span><br>
+            • <strong>Referência:</strong> Proposta Técnica <span class="var-field">PTC8A726</span> | Solicitante: <span class="var-field">Pedro Szajnferber de Franco Carneiro</span>, Documento: <span class="var-field">281.365.108-73</span>
+        </div>
+
+        <h2>1. ESCOPO DOS SERVIÇOS DE CONSULTORIA AMBIENTAL</h2>
+        <h3>1.1. Diagnóstico Fitossociológico in loco</h3>
+        <p>Levantamento fitofisionômico através de amostragem estruturada por técnica de caminhamentos para determinação dos estágios sucessionais da vegetação nativa, em estrita conformidade com a Lei da Mata Atlântica (11.428/06), Resolução CONAMA nº 01/94 e demais resoluções vigentes.</p>
+        <h3>1.2. Cartografia Temática e SIG</h3>
+        <p>Desenvolvimento de mapas georreferenciados contendo as poligonais de intervenção florestal pretendida, áreas preservadas e projeções cartográficas. Os entregáveis serão disponibilizados nos formatos Shapefile (.shp, .dbf, .shx, .prj) e Google Earth (.kml), seguindo as exigências técnicas de órgãos licenciadores.</p>
+        <h3>1.3. Relatório Técnico-Fotográfico</h3>
+        <p>Geração de laudo técnico-fotográfico de caracterização da vegetação, contendo os mapas da situação territorial atual e pretendida, imagens da fitofisionomia ocorrente, com recolhimento de ART profissional junto aos conselhos profissionais (CREA/CRBio).</p>
+        <h3>1.4. Montagem Processual e Expediting (Diligenciamento)</h3>
+        <p>Instrução e gestão ativa do processo: monitoramento quinzenal de protocolos, atendimento a possíveis questionamentos e exigências técnicas ("comunique-se") e acompanhamento de vistorias oficiais por um prazo de até 12 (doze) meses.</p>
+
+        <h2>2. CRONOGRAMA ESTIMADO DE ATIVIDADES</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fase Executiva</th>
+                    <th>Atividade</th>
+                    <th>Prazo Estimado</th>
+                    <th>Responsável</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fase 1</td>
+                    <td>Briefing & Diagnóstico: Vistoria técnica e levantamento de vegetação</td>
+                    <td>5 a 10 dias úteis</td>
+                    <td>Consultoria</td>
+                </tr>
+                <tr>
+                    <td>Fase 2</td>
+                    <td>Elaboração Técnica: Confecção de Laudos e Mapas</td>
+                    <td>7 a 12 dias úteis</td>
+                    <td>Consultoria</td>
+                </tr>
+                <tr>
+                    <td>Fase 3</td>
+                    <td>Checklist & Protocolo: Conferência documental e entrada no órgão.</td>
+                    <td>3 a 5 dias úteis</td>
+                    <td>Consultoria/Cliente</td>
+                </tr>
+                <tr>
+                    <td>Fase 4</td>
+                    <td>Diligenciamento (Análise): Prazo de análise do Consórcio/Órgão.</td>
+                    <td>Variável/Fluxo contínuo</td>
+                    <td>Órgão Licenciador</td>
+                </tr>
+                <tr>
+                    <td>Fase 5*</td>
+                    <td>Estudos Complementares: Atendimento a eventuais exigências e acompanhamento do processo.</td>
+                    <td>A definir</td>
+                    <td>Consultoria</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-notes">
+        <p><strong>*Fase 5:</strong> Aplicável caso ocorra nova lista de exigências técnicas, necessidade de compensação externa ao lote ou direcionamento do processo à CETESB.</p>
+        <p><strong>Marcos de Entrega (Milestones):</strong> O protocolo do processo é o marco que encerra a responsabilidade técnica inicial da Consultoria e inicia o prazo de análise pública.</p>
+        <p><strong>Interdependência:</strong> O cumprimento deste cronograma está condicionado à entrega célere dos documentos listados no Checklist por parte do cliente.</p>
+        <p><strong>Diligenciamento Ativo:</strong> Durante toda a Fase 4, nossa equipe realizará contatos periódicos (quinzenais) com os analistas do órgão licenciador para monitorar o status e antecipar possíveis exigências.</p>
+    </div>
+
+        <h2>3. REQUISITOS DE DOCUMENTAÇÃO (CHECKLIST DE ONBOARDING)</h2>
+        <p>Para o início dos prazos do cronograma técnico, a CONTRATANTE deverá entregar à CONTRATADA as cópias legíveis dos seguintes documentos básicos:</p>
+        <ul>
+            <li>Matrícula do Imóvel atualizada (emissão inferior a 30 dias);</li>
+            <li>Cópia do IPTU do exercício corrente ou cadastro INCRA (área rural); <strong>[entregue]</strong> </li> 
+            <li>Certidão de Diretrizes de Uso e Ocupação do Solo (emissão inferior a 180 dias);</li>
+            <li>Documentos pessoais do proprietário (RG, CPF ou CNH ou contrato social em caso de pessoa jurídica) e comprovante de residência; <strong>[entregue]</strong></li>
+            <li>Projeto Planialtimétrico ou Topográfico Cadastral em formato AutoCAD (.dwg); <strong>[entregue]</strong></li>
+            <li>Proposta de implantação da edificação pretendida (projeto de arquitetura básico).</li>
+        </ul>
+
+        <h2>4. MODELO DE PROCURAÇÃO PARA ASSINATURA</h2>
+        <div class="procuracao-box">
+        <h3>PROCURAÇÃO</h3>
+            <strong>OUTORGANTE:</strong> <span class="var-field">Pedro Szajnferber de Franco Carneiro</span>, CPF/CNPJ: <span class="var-field">281.365.108-73</span>, residente e domiciliado(a) em: <span class="var-field">Rua Pedroso Alvarenga, 220, ap. 111, Itaim Bibi, São Paulo-SP</span>.<br>
+        <strong>OUTORGADO:</strong> Euro Silva Lopes Filho / eQuanta Estudos Ambientais ltda, CNPJ: 18.984.648/0001-05.<br>
+        <strong>OBJETO:</strong> Representação técnico-administrativa perante a Agência Ambiental do Vale, Secretaria Municipal de Meio Ambiente do Município de Ubatuba e CETESB - Companhia Ambiental do Estado de São Paulo, com fins específicos de protocolar, acompanhar e diligenciar processos de Licenciamento Ambiental e de Autorização de Supressão de Vegetação em lote localizado em: <span class="var-field">LOTE 3, QUADRA U, Loteamento Jd. Costa Azul, Bairro Praia Dura, Ubatuba/SP</span>.<br>
+        <strong>PODERES:</strong> Protocolar documentos, peticionar, assinar formulários de requerimento, solicitar certidões, responder a exigências técnicas ("comunique-se"), agendar vistorias, retirar licenças, autorizações e pareceres técnicos finais emitidos, e, ainda, adotar as demais providências que se fizerem necessárias para regularização ambiental do imóvel junto aos órgãos públicos
+competentes.<br>
+A presente procuração permanecerá válida pelo prazo de 12 (doze) meses a contar da data de sua assinatura, podendo ser revogada a qualquer tempo ou ter seu prazo de validade prorrogado, a critério da outorgante.<br><br><br><br><br>
+
+<span class="var-field">Pedro Szajnferber de Franco Carneiro</span> <br>
+CPF/CNPJ: <span class="var-field">281.365.108-73</span> <br><br><br>
+<span class="var-field">São Paulo, SP, 8 de julho de 2026</span>.
+        </div>
+
+        <p class="text-center" style="margin-top: 40px; font-size: 11px; color: #64748b;">
+            © eQuanta Estudos Ambientais | CNPJ: 18.984.648/0001-05 | Contrato e Termo Técnico de Referência.
+        </p>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 40px; margin-bottom: 50px;" class="no-print">
+    <button style="background-color: #ff6d00; color: #ffffff; padding: 18px 35px; border: none; border-radius: 50px; font-weight: bold; font-size: 20px; cursor: pointer; box-shadow: 0 4px 12px rgba(255,109,0,0.4);" onclick="window.print()">
+        📥 IMPRIMIR CONTRATO
+    </button>
+</div>
+
+</body>
+</html>

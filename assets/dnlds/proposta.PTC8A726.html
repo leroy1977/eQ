@@ -166,7 +166,7 @@
         <p>Geração de laudo técnico-fotográfico de caracterização da vegetação para submissão ao portal da <strong>Agência Ambiental do Vale</strong>.</p>
 
         <h3>1.5. Expediting (Instrução Processual Digital)</h3>
-        <p>Gestão ativa do processo: monitoramento semanal de protocolos, resposta imediata a exigências técnicas ("comunique-se") e acompanhamento de vistorias oficiais.</p>
+        <p>Gestão ativa do processo: monitoramento quinzenal de protocolos, resposta imediata a exigências técnicas ("comunique-se") e acompanhamento de vistorias oficiais.</p>
     </div>
 
     <!-- CENÁRIO 1 - VERDE -->
@@ -262,10 +262,17 @@
 
     <h2>3. MODELO DE PROCURAÇÃO PARA ASSINATURA</h2>
     <div class="procuracao-box">
-        <strong>OUTORGANTE:</strong> [NOME DO CLIENTE], CPF: [NÚMERO], residente em [ENDEREÇO].<br>
-        <strong>OUTORGADO:</strong> [SEU NOME/CONSULTORIA], CPF/CNPJ: [NÚMERO].<br>
-        <strong>OBJETO:</strong> Representação perante a Agência Ambiental do Vale e Secretaria de Meio Ambiente do Município de Ubatuba com fins específicos de protocolar, acompanhar e diligenciar processos de Licenciamento Ambiental e de Supressão de Vegetação em lote localizado no [Endereço do lote, bairro ].<br>
-        <strong>PODERES:</strong> Protocolar documentos, assinar formulários, requerer certidões, responder exigências técnicas ('comunique-se'), agendar vistorias e retirar licenças e pareceres emitidos.
+            <strong>PROCURAÇÃO</strong> <br><br>
+            <strong>OUTORGANTE:</strong> <span class="var-field">{{CLIENTE_NOME}}</span>, CPF/CNPJ: <span class="var-field">{{CLIENTE_DOC}}</span>, residente e domiciliado(a) em: <span class="var-field">{{CLIENTE_ENDERECO}}</span>.<br>
+        <strong>OUTORGADO:</strong> Euro Silva Lopes Filho / eQuanta Estudos Ambientais ltda, CNPJ: 18.984.648/0001-05.<br>
+        <strong>OBJETO:</strong> Representação técnico-administrativa perante a Agência Ambiental do Vale, Secretaria Municipal de Meio Ambiente do Município de Ubatuba e CETESB - Companhia Ambiental do Estado de São Paulo, com fins específicos de protocolar, acompanhar e diligenciar processos de Licenciamento Ambiental e de Autorização de Supressão de Vegetação em lote localizado em: <span class="var-field">{{LOTE_LOCALIZACAO}}</span>.<br>
+        <strong>PODERES:</strong> Protocolar documentos, peticionar, assinar formulários de requerimento, solicitar certidões, responder a exigências técnicas ("comunique-se"), agendar vistorias, retirar licenças, autorizações e pareceres técnicos finais emitidos, e, ainda, adotar as demais providências que se fizerem necessárias para regularização ambiental do imóvel junto aos órgãos públicos
+competentes.<br>
+A presente procuração permanecerá válida pelo prazo de 12 (doze) meses a contar da data de sua assinatura, podendo ser revogada a qualquer tempo ou ter seu prazo de validade prorrogado, a critério da outorgante.<br><br><br><br><br>
+
+<span class="var-field">{{CLIENTE_NOME}}</span> <br>
+CPF/CNPJ: <span class="var-field">{{CLIENTE_DOC}}</span> <br><br><br>
+<span class="var-field">{{CIDADE_DATA}}</span>.
     </div>
 
         <!-- FOOTER LOGOS SNIPPET -->
@@ -273,15 +280,14 @@
     <tr>
         <td>
          <a href="https://www.equanta.com.br/" target="_blank" rel="noopener noreferrer" title="Abrir site da eQuanta">
-            <img src="https://www.equanta.com.br/assets/images/logo/logo_eQ_2025.svg" alt="Logo eQ">
+            <img src="https://www.equanta.com.br/assets/images/logo/logo_eQ_2025.svg" alt="Logo eQ" width="60">
         </td>
         <td>
         <a href="mailto:info@eQuanta.com" target="_blank" rel="noopener noreferrer" title="Enviar email à eQuanta">
-            <img src="https://www.equanta.com.br/assets/images/logo/email.logo_eQ_footer_2025.svg" alt="Logo eQ email">
+            <img src="https://www.equanta.com.br/assets/images/logo/email.logo_eQ_footer_2025.svg" alt="Logo eQ email" width="240">
         </td>
     </tr>
 </table>
-
 
     <div class="no-print" style="text-align: center; margin-top: 50px;">
     <!--    <button onclick="window.print()" class="cta-button">📄 SALVAR PROPOSTA EM PDF</button>
@@ -290,6 +296,12 @@
     
         <p style="font-size: 14px; margin-top: 20px;">© eQuanta Estudos Ambientais CNPJ: 18.984.648/0001-05 | Litoral Norte & Vale do Paraíba </p>
     </div>
+</div>
+
+<div style="text-align: center; margin-top: 40px; margin-bottom: 50px;" class="no-print">
+    <button style="background-color: #ff6d00; color: #ffffff; padding: 18px 35px; border: none; border-radius: 50px; font-weight: bold; font-size: 20px; cursor: pointer; box-shadow: 0 4px 12px rgba(255,109,0,0.4);" onclick="window.print()">
+        📥 IMPRIMIR PROPOSTA
+    </button>
 </div>
 
 </body>
