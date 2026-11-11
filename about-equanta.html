@@ -489,17 +489,17 @@ Our mission is to produce scientific and technical knowledge that supports decis
   var map = L.map('projectMap').setView([-14.2350, -51.9253], 4); // Brazil center
 
   // Add the tile layer
- // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //  attribution: '© OpenStreetMap contributors'
- // }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+   attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
   
   
     // Modern light-gray base map (CartoDB Positron)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap contributors',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
+ // L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+ //   attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap contributors',
+ //   subdomains: 'abcd',
+ //   maxZoom: 19
+ // }).addTo(map);
 
   // Define custom icons
   var terrestrialIcon = L.icon({
